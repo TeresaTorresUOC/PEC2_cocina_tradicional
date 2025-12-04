@@ -1,0 +1,39 @@
+@use "../variables" as vars;
+@use "../_dependencies" as dep;
+@use "../utils/mixins" as *;
+
+@include layer-components {
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: dep.$badge-radius;
+    background: dep.$badge-bg;
+    color: dep.$badge-color;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .badge--ghost {
+    background: rgba(75, 214, 179, 0.16);
+    color: vars.$neutral-900;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.85rem;
+    border-radius: dep.$badge-radius;
+    background: rgba(17, 24, 39, 0.08);
+    color: vars.$neutral-900;
+    font-weight: 600;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+  }
+
+  .chip--soft {
+    background: rgba(75, 214, 179, 0.15);
+    border-color: rgba(75, 214, 179, 0.3);
+  }
+}

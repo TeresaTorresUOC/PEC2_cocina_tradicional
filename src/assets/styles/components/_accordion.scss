@@ -1,0 +1,36 @@
+@use "../variables" as vars;
+@use "../utils/mixins" as *;
+
+@include layer-components {
+  .accordion {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .accordion__item {
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    border-radius: vars.$border-radius-md;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    transition: border-color 0.2s ease;
+  }
+
+  .accordion__item[open] {
+    border-color: vars.$coral;
+    box-shadow: 0 12px 30px rgba(255, 111, 97, 0.15);
+  }
+
+  .accordion__summary {
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .accordion__body {
+    margin: 0.5rem 0 0;
+    color: vars.$neutral-700;
+  }
+}

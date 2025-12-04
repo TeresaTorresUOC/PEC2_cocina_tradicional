@@ -1,0 +1,43 @@
+@use "../variables" as vars;
+@use "../utils/mixins" as *;
+@use "../_dependencies" as dep;
+
+@include layer-components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: dep.$btn-padding-y dep.$btn-padding-x;
+    border-radius: dep.$btn-border-radius;
+    font-weight: dep.$btn-font-weight;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: vars.$gradient-primary;
+    color: #0d0f1a;
+    box-shadow: dep.$btn-shadow;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 25px 50px rgba(255, 111, 97, 0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: vars.$neutral-900;
+    border-color: rgba(17, 24, 39, 0.2);
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background: rgba(255, 111, 97, 0.08);
+    color: vars.$neutral-900;
+  }
+}

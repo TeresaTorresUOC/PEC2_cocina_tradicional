@@ -1,0 +1,68 @@
+@use "../variables" as vars;
+@use "../utils/mixins" as *;
+
+@include layer-pages {
+  .page--workshops .page__hero {
+    background: conic-gradient(from 120deg, rgba(255, 111, 97, 0.15), rgba(75, 214, 179, 0.16), rgba(255, 179, 71, 0.14));
+    padding: clamp(1.5rem, 3vw, 2rem);
+    border-radius: vars.$border-radius-lg;
+  }
+
+  .workshops {
+    @include container-inline;
+  }
+
+  .workshops__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .workshop-card {
+    padding: 1.1rem 1.2rem;
+  }
+
+  .workshop-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .workshop-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: vars.$neutral-700;
+  }
+
+  .workshop-card__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .glossary {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .glossary__content {
+    padding: 1.25rem;
+    border-radius: vars.$border-radius-lg;
+    background: color-mix(in oklab, #fff 80%, vars.$emerald 20%);
+    box-shadow: vars.$shadow-soft;
+  }
+
+  .glossary__content h2 {
+    margin-top: 0;
+  }
+
+  @container section-box (min-width: 920px) {
+    .workshop-card {
+      min-height: 28dvh;
+    }
+  }
+}

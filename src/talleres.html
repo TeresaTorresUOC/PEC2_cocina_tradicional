@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" /><!-- do not remove this line! -->
+    <title>Ponentes - Jornadas de Cocina Tradicional</title>
+  </head>
+  <body class="site" data-page="speakers">
+    <include src="./views/header.html"></include>
+    <main class="page page--speakers" data-container>
+      <header class="page__hero">
+        <p class="eyebrow">Ponentes 2025</p>
+        <h1 class="page__title">Cocineras y cocineros que cuidan la tradición</h1>
+        <p class="page__lead">
+          Historias de oficio, recetas heredadas y nuevas miradas sobre el producto local.
+        </p>
+      </header>
+
+      <section class="speakers" aria-label="Listado de ponentes">
+        <div class="speakers__grid">
+          <article class="speaker-card">
+            <div class="speaker-card__media" style="background-image: url('https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="speaker-card__body">
+              <div class="speaker-card__header">
+                <h2 class="speaker-card__name">Clara Montseny</h2>
+                <span class="badge">KM0</span>
+              </div>
+              <p class="speaker-card__role">Chef en Casa Safrà · Cocina catalana contemporánea</p>
+              <p class="speaker-card__bio">
+                Trabaja con huertas cooperativas y reinventa recetas de su abuela con técnicas de baja temperatura.
+              </p>
+              <div class="speaker-card__tags">
+                <span class="chip chip--soft">Verduras</span>
+                <span class="chip chip--soft">Slow food</span>
+                <span class="chip chip--soft">Caldo dashi</span>
+              </div>
+              <a class="btn btn-outline" href="articulo.html">Leer entrevista</a>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-card__media" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="speaker-card__body">
+              <div class="speaker-card__header">
+                <h2 class="speaker-card__name">Kenji Yamato</h2>
+                <span class="badge badge--ghost">Fermentos</span>
+              </div>
+              <p class="speaker-card__role">Investigador de umami · Escuela de Kioto</p>
+              <p class="speaker-card__bio">
+                Demuestra cómo el koji puede convivir con ingredientes mediterráneos y abre rutas de sabor inesperadas.
+              </p>
+              <div class="speaker-card__tags">
+                <span class="chip chip--soft">Koji</span>
+                <span class="chip chip--soft">Caldo</span>
+                <span class="chip chip--soft">Ahumados</span>
+              </div>
+              <a class="btn btn-outline" href="talleres.html">Su taller</a>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-card__media" style="background-image: url('https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="speaker-card__body">
+              <div class="speaker-card__header">
+                <h2 class="speaker-card__name">Naira Choque</h2>
+                <span class="badge">Andes</span>
+              </div>
+              <p class="speaker-card__role">Cocina andina · Saberes de altiplano</p>
+              <p class="speaker-card__bio">
+                Defiende la quinua, la papa liofilizada y los ajíes nativos como patrimonio vivo en migraciones urbanas.
+              </p>
+              <div class="speaker-card__tags">
+                <span class="chip chip--soft">Quinua</span>
+                <span class="chip chip--soft">Aji amarillo</span>
+                <span class="chip chip--soft">Cocción a tierra</span>
+              </div>
+              <a class="btn btn-outline" href="articulo.html#memoria">Memoria viva</a>
+            </div>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-card__media" style="background-image: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80');"></div>
+            <div class="speaker-card__body">
+              <div class="speaker-card__header">
+                <h2 class="speaker-card__name">Leila Benali</h2>
+                <span class="badge badge--ghost">Mediterráneo</span>
+              </div>
+              <p class="speaker-card__role">Pastelera · Aromas de zoco</p>
+              <p class="speaker-card__bio">
+                Investiga especias, azahar y pistacho para crear postres ligeros que conservan el gesto artesanal.</p>
+              <div class="speaker-card__tags">
+                <span class="chip chip--soft">Pastelería</span>
+                <span class="chip chip--soft">Especias</span>
+                <span class="chip chip--soft">Miel</span>
+              </div>
+              <a class="btn btn-outline" href="talleres.html#dulces">Sesión dulce</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>

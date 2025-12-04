@@ -1,0 +1,109 @@
+@use "../variables" as vars;
+@use "../utils/mixins" as *;
+
+@include layer-pages {
+  .poster {
+    @include container-inline;
+    display: grid;
+    gap: clamp(1.5rem, 2vw, 2.5rem);
+    padding: vars.$container-padding;
+    max-width: vars.$max-width;
+    margin: 0 auto 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: start;
+  }
+
+  .poster__intro {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 0.75rem;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background: vars.$gradient-primary;
+    border-radius: vars.$border-radius-lg;
+    color: #0d0f1a;
+    box-shadow: vars.$shadow-card;
+  }
+
+  .poster__title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .poster__subtitle {
+    margin: 0;
+    max-width: 42ch;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .poster__meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .poster__grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .poster__list {
+    padding-left: 1.1rem;
+    margin: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .poster__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .poster__card {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .poster__card :is(h2, p) {
+    margin: 0;
+  }
+
+  .poster__card:nth-child(odd) {
+    background: color-mix(in srgb, #fff 90%, vars.$body-bg 10%);
+  }
+
+  .poster__card:has(.btn-outline) {
+    border: 1px dashed rgba(17, 24, 39, 0.1);
+  }
+
+  @container section-box (min-width: 760px) {
+    .poster {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        "intro intro intro"
+        "card1 card2 card3"
+        "card4 card4 card3";
+    }
+
+    .poster__intro {
+      grid-area: intro;
+    }
+
+    .poster__card:nth-child(1) {
+      grid-area: card1;
+    }
+
+    .poster__card:nth-child(2) {
+      grid-area: card2;
+    }
+
+    .poster__card:nth-child(3) {
+      grid-area: card3;
+    }
+
+    .poster__card:nth-child(4) {
+      grid-area: card4;
+    }
+  }
+}

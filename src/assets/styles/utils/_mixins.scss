@@ -1,0 +1,42 @@
+@use "../variables" as vars;
+
+@mixin container-inline {
+  container-type: inline-size;
+  container-name: section-box;
+}
+
+@mixin card-surface {
+  background: #fff;
+  border-radius: vars.$border-radius-lg;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: vars.$shadow-soft;
+}
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin layer-base {
+  @layer base {
+    @content;
+  }
+}
+
+@mixin layer-components {
+  @layer components {
+    @content;
+  }
+}
+
+@mixin layer-pages {
+  @layer pages {
+    @content;
+  }
+}

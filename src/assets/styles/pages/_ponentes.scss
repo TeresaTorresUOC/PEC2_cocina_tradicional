@@ -1,0 +1,52 @@
+@use "../variables" as vars;
+@use "../utils/mixins" as *;
+
+@include layer-pages {
+  .page {
+    @include container-inline;
+    padding: vars.$container-padding;
+    max-width: vars.$max-width;
+    margin: 0 auto 3rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .page__hero {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .page__title {
+    margin: 0;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+  }
+
+  .page__lead {
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .speakers__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .speaker-card {
+    flex: 1 1 min(320px, 100%);
+    min-width: 260px;
+    max-width: 360px;
+  }
+
+  .speaker-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  @container section-box (min-width: 900px) {
+    .speakers__grid {
+      justify-content: space-between;
+    }
+  }
+}

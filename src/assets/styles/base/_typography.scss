@@ -1,0 +1,27 @@
+
+@use "../variables" as vars;
+@use "../utils/mixins" as *;
+
+@include layer-base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: vars.$font-family-serif;
+    color: vars.$neutral-900;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    line-height: 1.65;
+    color: vars.$neutral-700;
+  }
+
+  .eyebrow {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: vars.$neutral-700;
+    margin: 0 0 0.5rem;
+  }
+}

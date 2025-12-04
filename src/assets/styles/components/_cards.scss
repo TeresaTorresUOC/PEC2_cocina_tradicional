@@ -1,0 +1,67 @@
+@use "../variables" as vars;
+@use "../utils/mixins" as *;
+@use "../_dependencies" as dep;
+
+@include layer-components {
+  .card {
+    @include card-surface;
+    padding: dep.$card-padding;
+  }
+
+  .poster__card,
+  .speaker-card,
+  .workshop-card {
+    @include card-surface;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .speaker-card__media {
+    border-radius: vars.$border-radius-md;
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .speaker-card__body {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .speaker-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .poster__quote,
+  .article__quote {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid vars.$coral;
+    border-radius: vars.$border-radius-md;
+    background: rgba(255, 111, 97, 0.08);
+    font-style: italic;
+  }
+
+  .alert {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.65rem;
+    padding: 1rem 1.1rem;
+    border-radius: vars.$border-radius-md;
+    background: rgba(75, 214, 179, 0.15);
+    border: 1px solid rgba(75, 214, 179, 0.35);
+  }
+
+  .alert__title {
+    margin: 0;
+    font-weight: 700;
+    color: vars.$neutral-900;
+  }
+
+  .alert__text {
+    margin: 0;
+  }
+}

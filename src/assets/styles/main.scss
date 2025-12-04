@@ -1,20 +1,28 @@
-/**
- * Use this file to import partials.
- * Do not include SCSS code in this file.
- */
-
  /**
  * Import dependencies
  */
-@use "dependencies";
+
+ @use "variables";
+ @use "utils/mixins";
+/**
+ * Import base styles
+ */
+ @use "base/base";
+ @use "base/typography";
+ /**
+ * Import layout and components
+ */
+@use "layout/layout";
+@use "components/buttons";
+@use "components/badges";
+@use "components/cards";
+@use "components/forms";
+@use "components/accordion";
 
 /**
- * Import layouts
- * It's a best practice to use a different partial for each page
+ * Pages
  */
-
- @use "layouts/home";
-
-/**
- * Do NOT include anything else in this file!
- */
+ @use "pages/home";
+@use "pages/ponentes";
+@use "pages/articulo";
+@use "pages/talleres";

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" /><!-- do not remove this line! -->
+    <title>Artículo - Jornadas de Cocina Tradicional</title>
+  </head>
+  <body class="site" data-page="article">
+    <include src="./views/header.html"></include>
+
+    <main class="page page--article" data-container>
+      <header class="page__hero">
+        <p class="eyebrow">Crónica</p>
+        <h1 class="page__title">Memoria, producto y mesa compartida</h1>
+        <p class="page__lead">
+          La cocina tradicional es un archivo vivo: se actualiza cada vez que alguien vuelve a amasar, catar un caldo o contar la historia que acompaña al plato.
+        </p>
+      </header>
+
+      <article class="article">
+        <figure class="article__media">
+          <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1200&q=80" alt="Mesa con ingredientes tradicionales" />
+          <figcaption>Ingredientes de temporada listos para la mise en place.</figcaption>
+        </figure>
+
+        <div class="article__body">
+          <p>
+            Cada región ha inventado formas de conservar, fermentar y compartir el alimento. El recetario popular es un dispositivo tecnológico y afectivo: envasa memoria en tarros de cristal, cuece paciencia en pucheros de barro y mide el tiempo en conversaciones.
+          </p>
+          <p id="memoria">
+            En la jornada inaugural, <strong>Clara Montseny</strong> recordó cómo su abuela recitaba las cantidades con metáforas: “un vaso de charla, dos puñados de risas”. Al reproducir el plato, reconoció que la técnica no era tan relevante como el clima emocional que lo envolvía.
+          </p>
+          <p>
+            El uso de nuevas herramientas no contradice la tradición si se mantiene la escucha atenta al producto. Los caldos claros de Kenji Yamato se enriquecen cuando el <em>kombu</em> se combina con los huesos de pollo de payés. Esa mezcla amplifica el umami y refuerza el kilómetro cero.
+          </p>
+          <p>
+            Las técnicas andinas presentadas por <strong>Naira Choque</strong> recuperan la cocción a tierra y el secado de la papa. Su ponencia mostró que la tradición también es adaptación: cada contexto urbano impone ajustes creativos que mantienen el relato vivo.
+          </p>
+          <ul class="article__list">
+            <li>Planificar la compra en mercados locales.</li>
+            <li>Respetar la temporalidad y el origen del producto.</li>
+            <li>Documentar historias familiares junto a cada receta.</li>
+          </ul>
+          <blockquote class="article__quote">
+            <p>“No hay tradición sin conversación: cada plato pide una mesa compartida”.</p>
+            <cite>— Naira Choque</cite>
+          </blockquote>
+          <p>
+            El público participó activamente y propuso un glosario de gestos culinarios para que cualquier persona pueda replicar estas recetas. El glosario se actualizará en la página de talleres y quedará abierto a nuevas aportaciones.
+          </p>
+        </div>
+
+        <aside class="article__aside" aria-label="Datos rápidos">
+          <h2>Datos rápidos</h2>
+          <ul>
+            <li><strong>4</strong> rutas gastronómicas por barrios.</li>
+            <li><strong>12</strong> talleres presenciales y en línea.</li>
+            <li><strong>2</strong> laboratorios sensoriales.</li>
+            <li><strong>1</strong> glosario colaborativo.</li>
+          </ul>
+          <div class="alert" role="status">
+            <span class="alert__icon" aria-hidden="true">ℹ️</span>
+            <div>
+              <p class="alert__title">Cupos limitados</p>
+              <p class="alert__text">Las sesiones de fermentos y de postres se llenan rápido. Reserva cuanto antes.</p>
+            </div>
+          </div>
+        </aside>
+      </article>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>
