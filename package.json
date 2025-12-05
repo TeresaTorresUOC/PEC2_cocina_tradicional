@@ -9,7 +9,9 @@
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
     "build": "npm-run-all clean parcel:build",
-    "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'"
+    "test": "echo 'Everything is working as expected \u2705\nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
+    "lint:styles": "stylelint \"src/**/*.{scss,css}\""
+
   },
   "targets": {
     "web": {
@@ -42,9 +44,15 @@
     "postcss-preset-env": "^10.1.3",
     "posthtml-include": "^2.0.1",
     "rimraf": "^6.0.1",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "stylelint": "^16.11.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-selector-bem-pattern": "^3.0.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.1"
+    "@fortawesome/fontawesome-free": "^7.0.1",
+    "bootstrap": "^5.3.3"
   }
-}
+  }
+

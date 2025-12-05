@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as vars;
+
+@use "bootstrap/scss/bootstrap" with (
+  $primary: vars.$coral,
+  $secondary: vars.$emerald,
+  $warning: vars.$amber,
+  $body-bg: vars.$body-bg,
+  $body-color: vars.$body-color,
+  $font-family-sans-serif: vars.$font-family-sans-serif,
+  $font-family-base: vars.$font-family-sans-serif,
+  $border-radius: vars.$border-radius-md,
+  $border-radius-lg: vars.$border-radius-lg,
+  $border-radius-pill: vars.$border-radius-pill,
+  $btn-border-radius: vars.$btn-border-radius,
+  $btn-padding-y: vars.$btn-padding-y,
+  $btn-padding-x: vars.$btn-padding-x,
+  $btn-font-weight: vars.$btn-font-weight,
+  $btn-box-shadow: vars.$btn-shadow,
+  $card-border-radius: vars.$card-border-radius,
+  $card-border-color: #e7e5e4,
+  $card-bg: vars.$card-bg,
+  $form-control-border-radius: vars.$form-radius,
+  $input-border-color: rgba(17, 24, 39, 0.16)
+);

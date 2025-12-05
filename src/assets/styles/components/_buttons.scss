@@ -1,6 +1,5 @@
-@use "../variables" as vars;
-@use "../utils/mixins" as *;
-@use "../_dependencies" as dep;
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
 
 @include layer-components {
   .btn {
@@ -8,9 +7,9 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: dep.$btn-padding-y dep.$btn-padding-x;
-    border-radius: dep.$btn-border-radius;
-    font-weight: dep.$btn-font-weight;
+    padding: vars.$btn-padding-y vars.$btn-padding-x;
+    border-radius: vars.$btn-border-radius;
+    font-weight: vars.$btn-font-weight;
     border: 1px solid transparent;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
@@ -20,7 +19,7 @@
   .btn-primary {
     background: vars.$gradient-primary;
     color: #0d0f1a;
-    box-shadow: dep.$btn-shadow;
+    box-shadow: vars.$btn-shadow;
   }
 
   .btn-primary:hover,

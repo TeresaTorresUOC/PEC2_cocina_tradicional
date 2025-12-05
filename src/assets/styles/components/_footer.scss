@@ -1,0 +1,52 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+
+@include layer-components {
+  .site__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem vars.$container-padding 2rem;
+    background: color-mix(in srgb, vars.$body-bg 75%, #ffffff 25%);
+    border-top: 1px solid rgba(17, 24, 39, 0.08);
+  }
+
+  .footer__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    color: vars.$neutral-900;
+  }
+
+  .footer__links {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: vars.$neutral-900;
+    font-weight: 600;
+  }
+
+  .footer__link--icon {
+    padding: 0.4rem 0.65rem;
+    border-radius: vars.$border-radius-pill;
+    background: rgba(75, 214, 179, 0.16);
+    border: 1px solid rgba(75, 214, 179, 0.35);
+  }
+
+  .footer__legal {
+    flex: 1 1 100%;
+    margin: 0.2rem 0 0;
+    color: vars.$neutral-700;
+    font-size: 0.95rem;
+  }
+}

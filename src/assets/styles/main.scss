@@ -1,23 +1,39 @@
- /**
- * Import dependencies
+/**
+ * Ajustes y utilidades (ITCSS: Settings + Tools)
  */
 
- @use "variables";
- @use "utils/mixins";
+@use "abstracts/functions";
+@use "abstracts/variables" as *;
+@use "abstracts/mixins";
+
+
 /**
- * Import base styles
+ * vendors
  */
- @use "base/base";
- @use "base/typography";
+ @use "vendors/fonts";
+ @use "vendors/bootstrap";
+ 
  /**
- * Import layout and components
+  * Base
+  */
+ @use "base/reset";
+ @use "base/typography";
+ 
+ /**
+  * Layout
+  */
+ @use "layout/grid";
+ @use "layout/forms";
+ 
+ /**
+  * Components
  */
-@use "layout/layout";
+
 @use "components/buttons";
 @use "components/badges";
 @use "components/cards";
-@use "components/forms";
 @use "components/accordion";
+@use "components/footer";
 
 /**
  * Pages

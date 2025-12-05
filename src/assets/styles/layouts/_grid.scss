@@ -1,0 +1,18 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+
+@include layer-components {
+  .site {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 111, 97, 0.08), transparent 35%),
+      radial-gradient(circle at 80% 10%, rgba(75, 214, 179, 0.08), transparent 35%),
+      vars.$body-bg;
+  }
+
+  [data-container] {
+    width: min(1200px, calc(100% - (vars.$container-padding * 2)));
+    margin-inline: auto;
+  }
+}
