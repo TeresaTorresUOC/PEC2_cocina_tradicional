@@ -3,8 +3,9 @@
  */
 
 @use "abstracts/functions";
-@use "abstracts/variables" as *;
-@use "abstracts/mixins";
+@use "./variables" as *;
+@use "./utils/mixins";
+
 
 
 /**
