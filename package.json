@@ -9,9 +9,8 @@
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
     "build": "npm-run-all clean parcel:build",
-    "test": "echo 'Everything is working as expected \u2705\nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
+    "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
     "lint:styles": "stylelint \"src/**/*.{scss,css}\""
-
   },
   "targets": {
     "web": {
@@ -52,7 +51,8 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
-    "bootstrap": "^5.3.3"
+    "@popperjs/core": "^2.11.8",
+    "baseline-browser-mapping": "^2.9.3",
+    "bootstrap": "^5.3.8"
   }
-  }
-
+}
