@@ -2,7 +2,7 @@
 @use "../variables" as vars;
 
 
-@forward "../../../node_modules/bootstrap/scss/bootstrap" with (
+@forward "../../../../node_modules/bootstrap/scss/bootstrap" with (
   $primary: vars.$coral,
   $secondary: vars.$emerald,
   $warning: vars.$amber,

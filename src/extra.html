@@ -1,0 +1,54 @@
+<title>Experiencias Extra - Jornadas de Cocina Tradicional</title>
+  </head>
+  <body class="site" data-page="extra">
+    <include src="./views/header.html"></include>
+
+    <main class="page page--extra" data-container>
+      <header class="page__hero">
+        <p class="page__eyebrow">Actividades complementarias</p>
+        <h1 class="page__title">Sabores extendidos más allá de las sesiones</h1>
+        <p class="page__lead">Degustaciones nocturnas, rutas guiadas y retos culinarios para seguir explorando la tradición.</p>
+      </header>
+
+      <!-- GRID / FLEX: combina tarjetas y lista de hitos -->
+      <section class="extra" aria-label="Agenda de experiencias">
+        <div class="extra__highlights">
+          <article class="extra-card" id="fermentos">
+            <h2 class="extra-card__title">Laboratorio de Fermentos</h2>
+            <p class="extra-card__text">Sesión práctica liderada por Kenji Yamato para experimentar con koji y encurtidos mediterráneos.</p>
+            <ul class="extra-card__list">
+              <li>Degustación guiada</li>
+              <li>Recetario descargable</li>
+              <li>Espacio de preguntas en vivo</li>
+            </ul>
+          </article>
+
+          <article class="extra-card" id="dulces">
+            <h2 class="extra-card__title">Ruta de Postres del Zoco</h2>
+            <p class="extra-card__text">Leila Benali propone un paseo sensorial por pistachos, azahar y mieles artesanas.</p>
+            <p class="extra-card__meta">Incluye cata y visita a obradores locales.</p>
+          </article>
+        </div>
+
+        <section class="timeline" aria-label="Cronograma"> <!-- LINEA DE TIEMPO: se maquetará con flex/columnas -->
+          <h2 class="timeline__title">Cronograma</h2>
+          <article class="timeline__event">
+            <h3 class="timeline__name">Paseo nocturno por mercados</h3>
+            <p class="timeline__detail">Visita guiada por la Boqueria con degustación de productos de temporada.</p>
+          </article>
+          <article class="timeline__event">
+            <h3 class="timeline__name">Retos en la comunidad</h3>
+            <p class="timeline__detail">Comparte tu receta familiar con fotos y participa por un lote de producto local.</p>
+          </article>
+          <article class="timeline__event">
+            <h3 class="timeline__name">Sesión de cierre</h3>
+            <p class="timeline__detail">Mesa redonda sobre cómo documentar la tradición culinaria en entornos digitales.</p>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>

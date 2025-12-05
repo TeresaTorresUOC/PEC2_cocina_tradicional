@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -8,57 +7,57 @@
     <title>Jornadas de Cocina Tradicional - Cartel</title>
   </head>
   <body class="site" data-page="home">
-      <include src="./views/header.html"></include>
-  
-      <main class="poster" data-container>
-        <section class="poster__intro">
-          <p class="eyebrow">UOC · Jornadas 2025</p>
-          <h1 class="poster__title">Cocina Tradicional que Inspira</h1>
-          <p class="poster__subtitle">Cuatro días de recetas, historias y sabores que conectan generaciones.</p>
-          <div class="poster__meta">
-            <span class="badge">12-15 de julio · Barcelona</span>
-            <span class="badge badge--ghost">Acceso híbrido</span>
+    <include src="./views/header.html"></include>
+
+    <main class="poster" data-container>
+      <header class="poster__hero">
+        <p class="poster__eyebrow">UOC · Jornadas 2025</p>
+        <h1 class="poster__title">Cocina Tradicional que Inspira</h1>
+        <p class="poster__subtitle">Cuatro días de recetas, historias y sabores que conectan generaciones.</p>
+        <div class="poster__meta">
+          <span class="poster__badge badge">12-15 de julio · Barcelona</span>
+          <span class="poster__badge badge badge--ghost">Acceso híbrido</span>
+        </div>
+        <a class="poster__cta btn btn-primary" href="ponentes.html">Conoce el programa</a>
+      </header>
+
+      <section class="poster__grid" aria-label="Destacados del programa">
+        <article class="poster-card">
+          <h2 class="poster-card__title">Rutas de Sabores</h2>
+          <p class="poster-card__text">Itinerarios urbanos guiados para descubrir mercados, obradores y cocinas de barrio.</p>
+          <ul class="poster-card__list">
+            <li>Mercados de la Boqueria y Santa Caterina</li>
+            <li>Tapas de autor en Gràcia</li>
+            <li>Repostería conventual</li>
+          </ul>
+        </article>
+        <article class="poster-card">
+          <h2 class="poster-card__title">Talleres en Vivo</h2>
+          <p class="poster-card__text">Clases prácticas con expertas en cocina mediterránea, andina y asiática.</p>
+          <div class="poster-card__chips">
+            <span class="chip">Pasta fresca</span>
+            <span class="chip">Fermentos</span>
+            <span class="chip">Caldos claros</span>
+            <span class="chip">Dumplings</span>
           </div>
-          <a class="btn btn-primary" href="talleres.html">Reserva tu plaza</a>
-        </section>
-  
-        <section class="poster__grid" aria-label="Destacados del programa">
-          <article class="poster__card">
-            <h2>Rutas de Sabores</h2>
-            <p>Itinerarios urbanos guiados para descubrir mercados, obradores y cocinas de barrio.</p>
-            <ul class="poster__list">
-              <li>Mercados de la Boqueria y Santa Caterina</li>
-              <li>Tapas de autor en Gràcia</li>
-              <li>Repostería conventual</li>
-            </ul>
-          </article>
-          <article class="poster__card">
-            <h2>Talleres en Vivo</h2>
-            <p>Clases prácticas con expertas en cocina mediterránea, andina y asiática.</p>
-            <div class="poster__chips">
-              <span class="chip">Pasta fresca</span>
-              <span class="chip">Fermentos</span>
-              <span class="chip">Caldos claros</span>
-              <span class="chip">Dumplings</span>
-            </div>
-          </article>
-          <article class="poster__card">
-            <h2>Conversaciones</h2>
-            <p>Diálogos sobre sostenibilidad, productos de temporada y memoria gastronómica.</p>
-            <blockquote class="poster__quote">
-              <p>“El recetario es un mapa de afectos”.</p>
-              <cite>— Clara Montseny</cite>
-            </blockquote>
-          </article>
-          <article class="poster__card">
-            <h2>Expo Sensorial</h2>
-            <p>Instalación interactiva sobre aromas, texturas y colores de la cocina tradicional.</p>
-            <a class="btn btn-outline" href="articulo.html">Lee la historia</a>
-          </article>
-        </section>
-      </main>
+        </article>
+        <article class="poster-card">
+          <h2 class="poster-card__title">Conversaciones</h2>
+          <p class="poster-card__text">Diálogos sobre sostenibilidad, productos de temporada y memoria gastronómica.</p>
+          <blockquote class="poster-card__quote">
+            <p>“El recetario es un mapa de afectos”.</p>
+            <cite>— Clara Montseny</cite>
+          </blockquote>
+        </article>
+        <article class="poster-card">
+          <h2 class="poster-card__title">Expo Sensorial</h2>
+          <p class="poster-card__text">Instalación interactiva sobre aromas, texturas y colores de la cocina tradicional.</p>
+          <a class="poster-card__link btn btn-outline" href="articulo.html">Lee la historia</a>
+        </article>
+      </section>
+    </main>
+
   
     <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+    <script type="module" src="./assets/scripts/main.js"></script>
 </html>

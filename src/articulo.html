@@ -11,20 +11,21 @@
 
     <main class="page page--article" data-container>
       <header class="page__hero">
-        <p class="eyebrow">Crónica</p>
+        <p class="page__eyebrow">Crónica</p>
         <h1 class="page__title">Memoria, producto y mesa compartida</h1>
         <p class="page__lead">
           La cocina tradicional es un archivo vivo: se actualiza cada vez que alguien vuelve a amasar, catar un caldo o contar la historia que acompaña al plato.
         </p>
       </header>
 
-      <article class="article">
+       <!-- LAYOUT: disposición editorial con columna principal y aside -->
+       <article class="article" aria-labelledby="cronica">
         <figure class="article__media">
           <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1200&q=80" alt="Mesa con ingredientes tradicionales" />
           <figcaption>Ingredientes de temporada listos para la mise en place.</figcaption>
         </figure>
 
-        <div class="article__body">
+        <div class="article__body" id="cronica">
           <p>
             Cada región ha inventado formas de conservar, fermentar y compartir el alimento. El recetario popular es un dispositivo tecnológico y afectivo: envasa memoria en tarros de cristal, cuece paciencia en pucheros de barro y mide el tiempo en conversaciones.
           </p>
@@ -73,4 +74,5 @@
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
+  
 </html>
