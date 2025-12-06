@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" /><!-- do not remove this line! -->
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
     <title>Artículo - Jornadas de Cocina Tradicional</title>
   </head>
   <body class="site" data-page="article">
@@ -13,25 +13,36 @@
       <header class="page__hero">
         <p class="page__eyebrow">Crónica</p>
         <h1 class="page__title">Memoria, producto y mesa compartida</h1>
-        <p class="page__lead">
-          La cocina tradicional es un archivo vivo: se actualiza cada vez que alguien vuelve a amasar, catar un caldo o contar la historia que acompaña al plato.
-        </p>
+        <p class="page__lead">Una mirada pausada a lo que ocurrió en las jornadas y a las conversaciones que todavía se siguen cocinando.</p>
       </header>
 
-       <!-- LAYOUT: disposición editorial con columna principal y aside -->
-       <article class="article" aria-labelledby="cronica">
+      <article class="article" aria-labelledby="cronica">
+        <header class="article__header" id="cronica">
+          <p class="article__kicker">Cobertura especial</p>
+          <h2 class="article__subtitle">La tradición como laboratorio contemporáneo</h2>
+          <p class="article__meta">
+            Por <span class="article__author">Rocío Beltrán</span>
+            <time datetime="2024-05-15" class="article__date">15 de mayo de 2024</time>
+          </p>
+        </header>
+
         <figure class="article__media">
           <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1200&q=80" alt="Mesa con ingredientes tradicionales" />
           <figcaption>Ingredientes de temporada listos para la mise en place.</figcaption>
         </figure>
 
-        <div class="article__body" id="cronica">
+        <div class="article__body">
+
           <p>
             Cada región ha inventado formas de conservar, fermentar y compartir el alimento. El recetario popular es un dispositivo tecnológico y afectivo: envasa memoria en tarros de cristal, cuece paciencia en pucheros de barro y mide el tiempo en conversaciones.
           </p>
           <p id="memoria">
             En la jornada inaugural, <strong>Clara Montseny</strong> recordó cómo su abuela recitaba las cantidades con metáforas: “un vaso de charla, dos puñados de risas”. Al reproducir el plato, reconoció que la técnica no era tan relevante como el clima emocional que lo envolvía.
           </p>
+          <figure class="article__media article__media--inline">
+            <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1200&q=80" alt="Cazuela tradicional sobre fuego lento" />
+            <figcaption>La cocción lenta que acompaña a los relatos de cocina.</figcaption>
+          </figure>
           <p>
             El uso de nuevas herramientas no contradice la tradición si se mantiene la escucha atenta al producto. Los caldos claros de Kenji Yamato se enriquecen cuando el <em>kombu</em> se combina con los huesos de pollo de payés. Esa mezcla amplifica el umami y refuerza el kilómetro cero.
           </p>
@@ -42,6 +53,7 @@
             <li>Planificar la compra en mercados locales.</li>
             <li>Respetar la temporalidad y el origen del producto.</li>
             <li>Documentar historias familiares junto a cada receta.</li>
+            <li>Volver a la mesa para compartir el resultado y la historia.</li>
           </ul>
           <blockquote class="article__quote">
             <p>“No hay tradición sin conversación: cada plato pide una mesa compartida”.</p>
@@ -74,5 +86,5 @@
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
-  
+
 </html>

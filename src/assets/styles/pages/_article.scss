@@ -1,0 +1,210 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+
+@include layer-pages {
+  .page--article {
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .page--article .page__hero {
+    border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+    padding-bottom: 1.5rem;
+  }
+
+  .page--article .page__title {
+    max-width: 32ch;
+    line-height: 1.1;
+  }
+
+  .page--article .page__lead {
+    max-width: 65ch;
+    line-height: 1.6;
+  }
+
+  .article {
+    @include container-inline;
+    display: grid;
+    gap: clamp(1.25rem, 2vw, 2rem);
+    grid-template-columns: minmax(0, 2.4fr) minmax(220px, 1fr);
+    align-items: start;
+    color: vars.$body-color;
+  }
+
+  .article__header {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .article__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(15, 23, 42, 0.75);
+    font-weight: 700;
+  }
+
+  .article__subtitle {
+    font-size: clamp(1.4rem, 2vw, 1.75rem);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .article__meta {
+    display: inline-flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: 0;
+    color: rgba(15, 23, 42, 0.75);
+    font-size: 0.98rem;
+  }
+
+  .article__meta :where(.article__author, .article__date) {
+    font-weight: 600;
+  }
+
+  .article__body {
+    display: grid;
+    gap: 1.1rem;
+    max-width: 68ch;
+  }
+
+  .article__body :is(p, li) {
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  .article__body :where(h2, h3, h4) {
+    font-size: clamp(1.2rem, 1.4vw, 1.4rem);
+    line-height: 1.3;
+    margin: 0.5rem 0;
+    color: #0f172a;
+  }
+
+  .article__list {
+    display: grid;
+    gap: 0.45rem;
+    padding-left: 1.1rem;
+    margin: 0.5rem 0 0;
+  }
+
+  .article__media {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: vars.$border-radius-lg;
+    box-shadow: vars.$shadow-card;
+    background: #0f172a;
+  }
+
+  .article__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .article__media figcaption {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 0.8rem 1rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+    color: #fff;
+    font-size: 0.95rem;
+  }
+
+  .article__media--inline {
+    box-shadow: vars.$shadow-soft;
+  }
+
+  .article__body:has(.article__media--inline) {
+    grid-template-columns: 1fr;
+  }
+
+  .article__quote {
+    margin: 0;
+    padding: 1.1rem 1.25rem;
+    border-left: 4px solid vars.$primary;
+    background: rgba(17, 24, 39, 0.03);
+    border-radius: vars.$border-radius-md;
+    display: grid;
+    gap: 0.35rem;
+    font-size: 1.05rem;
+  }
+
+  .article__quote cite {
+    font-style: normal;
+    color: rgba(17, 24, 39, 0.7);
+    font-weight: 600;
+  }
+
+  .article:has(blockquote) {
+    border-top: 2px solid color-mix(in srgb, vars.$primary 55%, #0f172a 45%);
+    padding-top: 0.5rem;
+  }
+
+  .article__aside {
+    position: sticky;
+    top: 96px;
+    display: grid;
+    gap: 0.8rem;
+    align-self: start;
+    padding: 1rem;
+    border-radius: vars.$border-radius-lg;
+    background: rgba(17, 24, 39, 0.035);
+    backdrop-filter: blur(4px);
+    box-shadow: vars.$shadow-soft;
+  }
+
+  .article__aside h2 {
+    margin: 0;
+  }
+
+  .article__aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .article__aside li {
+    padding: 0.6rem 0.75rem;
+    border-radius: vars.$border-radius-md;
+    background: rgba(17, 24, 39, 0.06);
+  }
+
+  @container section-box (max-width: 1100px) {
+    .article {
+      grid-template-columns: 1fr;
+    }
+
+    .article__aside {
+      position: static;
+      order: -1;
+    }
+  }
+
+  @container section-box (max-width: 720px) {
+    .article {
+      gap: 1rem;
+    }
+
+    .article__meta {
+      font-size: 0.92rem;
+    }
+
+    .article__body {
+      max-width: 100%;
+      font-size: 0.98rem;
+    }
+
+    .article__body :where(h2, h3, h4) {
+      font-size: clamp(1.1rem, 5vw, 1.25rem);
+    }
+
+    .article__media--inline {
+      margin-inline: auto;
+      max-width: 520px;
+    }
+  }
+}
