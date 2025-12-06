@@ -1,4 +1,10 @@
-<title>Experiencias Extra - Jornadas de Cocina Tradicional</title>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <title>Experiencias Extra - Jornadas de Cocina Tradicional</title>
   </head>
   <body class="site" data-page="extra">
     <include src="./views/header.html"></include>
@@ -6,49 +12,88 @@
     <main class="page page--extra" data-container>
       <header class="page__hero">
         <p class="page__eyebrow">Actividades complementarias</p>
-        <h1 class="page__title">Sabores extendidos más allá de las sesiones</h1>
-        <p class="page__lead">Degustaciones nocturnas, rutas guiadas y retos culinarios para seguir explorando la tradición.</p>
+        <h1 class="page__title">Conecta, comparte y explora nuevas texturas</h1>
+        <p class="page__lead">
+          Un espacio libre para experimentar: envíanos tus preguntas, comparte recetas familiares y descubre una
+          galería viva de sabores que acompañan las jornadas.
+        </p>
+
       </header>
 
-      <!-- GRID / FLEX: combina tarjetas y lista de hitos -->
-      <section class="extra" aria-label="Agenda de experiencias">
-        <div class="extra__highlights">
-          <article class="extra-card" id="fermentos">
-            <h2 class="extra-card__title">Laboratorio de Fermentos</h2>
-            <p class="extra-card__text">Sesión práctica liderada por Kenji Yamato para experimentar con koji y encurtidos mediterráneos.</p>
-            <ul class="extra-card__list">
-              <li>Degustación guiada</li>
-              <li>Recetario descargable</li>
-              <li>Espacio de preguntas en vivo</li>
-            </ul>
-          </article>
+      <section class="extra-panels" aria-label="Contacta y explora la galería">
+        <article class="contact-card" id="fermentos">
+          <div class="contact-card__header">
+            <span class="badge">Formulario activo</span>
+            <h2 class="contact-card__title">Escríbenos y sigue la conversación</h2>
+            <p class="contact-card__subtitle">Comparte dudas logísticas, propuestas de colaboración o recetas que quieras
+              difundir.</p>
+          </div>
+          <form class="contact-card__form row g-3" name="extra-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="extra-contact" />
+            <input type="hidden" name="bot-field" />
+            <div class="col-12">
+              <label class="form-label" for="contact-name">Nombre completo</label>
+              <input class="form-control" type="text" id="contact-name" name="name" placeholder="Marina García" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="contact-email">Email</label>
+              <input class="form-control" type="email" id="contact-email" name="email" placeholder="correo@ejemplo.com" required />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="contact-topic">Tipo de consulta</label>
+              <select class="form-select" id="contact-topic" name="topic" required>
+                <option value="">Selecciona una opción</option>
+                <option value="colaboracion">Colaboración gastronómica</option>
+                <option value="logistica">Logística y accesos</option>
+                <option value="recetas">Intercambio de recetas</option>
+                <option value="prensa">Prensa y difusión</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="contact-message">Mensaje</label>
+              <textarea class="form-control" id="contact-message" name="message" rows="4" placeholder="Cuéntanos cómo quieres participar" required></textarea>
+            </div>
+            <div class="col-12 form-check">
+              <input class="form-check-input" type="checkbox" value="acepto" id="contact-consent" name="consent" required />
+              <label class="form-check-label" for="contact-consent">Acepto la política de privacidad y el uso de mis datos para gestionar la consulta.</label>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary contact-card__submit" type="submit">Enviar mensaje</button>
+              <p class="contact-card__helper">Respondemos en menos de 48 horas y compartimos las mejores recetas en la comunidad.</p>
+            </div>
+          </form>
+        </article>
 
-          <article class="extra-card" id="dulces">
-            <h2 class="extra-card__title">Ruta de Postres del Zoco</h2>
-            <p class="extra-card__text">Leila Benali propone un paseo sensorial por pistachos, azahar y mieles artesanas.</p>
-            <p class="extra-card__meta">Incluye cata y visita a obradores locales.</p>
-          </article>
-        </div>
-
-        <section class="timeline" aria-label="Cronograma"> <!-- LINEA DE TIEMPO: se maquetará con flex/columnas -->
-          <h2 class="timeline__title">Cronograma</h2>
-          <article class="timeline__event">
-            <h3 class="timeline__name">Paseo nocturno por mercados</h3>
-            <p class="timeline__detail">Visita guiada por la Boqueria con degustación de productos de temporada.</p>
-          </article>
-          <article class="timeline__event">
-            <h3 class="timeline__name">Retos en la comunidad</h3>
-            <p class="timeline__detail">Comparte tu receta familiar con fotos y participa por un lote de producto local.</p>
-          </article>
-          <article class="timeline__event">
-            <h3 class="timeline__name">Sesión de cierre</h3>
-            <p class="timeline__detail">Mesa redonda sobre cómo documentar la tradición culinaria en entornos digitales.</p>
-          </article>
-        </section>
+        <article class="gallery-card" aria-label="Galería gastronómica">
+            <div class="gallery-card__header">
+              <span class="badge badge--ghost">Galería</span>
+              <h2 class="gallery-card__title">Mini galería de platos</h2>
+              <p class="gallery-card__subtitle">Inspiraciones rápidas con ingredientes de mercado, texturas y colores que se mezclan.</p>
+            </div>
+            <div class="gallery" data-container>
+              <figure class="gallery__item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=720&q=80" alt="Plato con vegetales asados" />
+                <figcaption class="gallery__caption">Verduras ahumadas con vinagreta de cítricos</figcaption>
+              </figure>
+              <figure class="gallery__item">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=720&q=80" alt="Tigela con caldo y fideos" />
+                <figcaption class="gallery__caption">Caldo claro con fideos artesanales</figcaption>
+              </figure>
+              <figure class="gallery__item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=720&q=80" alt="Pan de masa madre" />
+                <figcaption class="gallery__caption">Masa madre con corteza crujiente</figcaption>
+              </figure>
+              <figure class="gallery__item">
+                <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=720&q=80" alt="Plato de pasta fresca" />
+                <figcaption class="gallery__caption">Raviolis de temporada con hierbas</figcaption>
+              </figure>
+            </div>
+          </article>  
       </section>
     </main>
 
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
+  
 </html>
