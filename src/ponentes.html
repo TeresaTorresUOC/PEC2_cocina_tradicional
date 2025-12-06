@@ -16,15 +16,20 @@
         <p class="page__lead">Historias de oficio, recetas heredadas y nuevas miradas sobre el producto local.</p>
       </header>
 
-      <section class="speakers" aria-label="Listado de ponentes">
-        <div class="speakers__grid">
-          <article class="speaker-card">
+      <section class="speakers" aria-labelledby="speakers-heading">
+        <div class="speakers__header">
+          <h2 class="speakers__title" id="speakers-heading">Ponentes</h2>
+          <p class="speakers__subtitle">Una retícula flexible que reúne perfiles de toda la ruta gastronómica.</p>
+        </div>
+
+        <div class="speakers__grid" role="list">
+          <article class="speakers__item speaker-card" role="listitem">
             <figure class="speaker-card__media">
               <img src="https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?auto=format&fit=crop&w=600&q=80" alt="Retrato de Clara Montseny" />
             </figure>
             <div class="speaker-card__body">
               <div class="speaker-card__header">
-                <h2 class="speaker-card__name">Clara Montseny</h2>
+                <h3 class="speaker-card__name">Clara Montseny</h3>
                 <span class="badge">KM0</span>
               </div>
               <p class="speaker-card__role">Chef en Casa Safrà · Cocina catalana contemporánea</p>
@@ -38,13 +43,13 @@
             </div>
           </article>
 
-          <article class="speaker-card">
+          <article class="speakers__item speaker-card" role="listitem">
             <figure class="speaker-card__media">
               <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Retrato de Kenji Yamato" />
             </figure>
             <div class="speaker-card__body">
               <div class="speaker-card__header">
-                <h2 class="speaker-card__name">Kenji Yamato</h2>
+                <h3 class="speaker-card__name">Kenji Yamato</h3>
                 <span class="badge badge--ghost">Fermentos</span>
               </div>
               <p class="speaker-card__role">Investigador de umami · Escuela de Kioto</p>
@@ -56,16 +61,16 @@
               </div>
               <a class="speaker-card__link btn btn-outline" href="extra.html#fermentos">Su taller</a>
             </div>
-            </div>
+           
           </article>
 
-          <article class="speaker-card">
+          <article class="speakers__item speaker-card" role="listitem">
             <figure class="speaker-card__media">
               <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=80" alt="Retrato de Naira Choque" />
             </figure>
             <div class="speaker-card__body">
               <div class="speaker-card__header">
-                <h2 class="speaker-card__name">Naira Choque</h2>
+                <h3 class="speaker-card__name">Naira Choque</h3>
                 <span class="badge">Andes</span>
               </div>
               <p class="speaker-card__role">Cocina andina · Saberes de altiplano</p>
@@ -79,13 +84,13 @@
             </div>
           </article>
 
-          <article class="speaker-card">
+          <article class="speakers__item speaker-card" role="listitem">
             <figure class="speaker-card__media">
               <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80" alt="Retrato de Leila Benali" />
             </figure>
             <div class="speaker-card__body">
               <div class="speaker-card__header">
-                <h2 class="speaker-card__name">Leila Benali</h2>
+                <h3 class="speaker-card__name">Leila Benali</h3>
                 <span class="badge badge--ghost">Mediterráneo</span>
               </div>
               <p class="speaker-card__role">Pastelera · Aromas de zoco</p>
@@ -105,4 +110,5 @@
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
+  
 </html>
