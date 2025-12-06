@@ -10,6 +10,21 @@
     <include src="./views/header.html"></include>
 
     <main class="poster" data-container>
+      <div class="poster__pattern" aria-hidden="true"></div>
+
+      <nav class="poster__nav" aria-label="Navegación del cartel">
+        <div class="poster__brand">
+          <span class="poster__brand-icon" aria-hidden="true">🍲</span>
+          <span class="poster__brand-name">Jornadas · Cocina Tradicional</span>
+        </div>
+        <ul class="poster__menu">
+          <li class="poster__menu-item"><a class="poster__menu-link" href="index.html">Cartel</a></li>
+          <li class="poster__menu-item"><a class="poster__menu-link" href="ponentes.html">Ponentes</a></li>
+          <li class="poster__menu-item"><a class="poster__menu-link" href="articulo.html">Artículo</a></li>
+          <li class="poster__menu-item"><a class="poster__menu-link" href="extra.html">Extra</a></li>
+        </ul>
+      </nav>
+
       <header class="poster__hero">
         <p class="poster__eyebrow">UOC · Jornadas 2025</p>
         <h1 class="poster__title">Cocina Tradicional que Inspira</h1>
@@ -18,8 +33,21 @@
           <span class="poster__badge badge">12-15 de julio · Barcelona</span>
           <span class="poster__badge badge badge--ghost">Acceso híbrido</span>
         </div>
+        <p class="poster__tagline">Recetas, relatos y técnicas que conectan mares y montañas.</p>
         <a class="poster__cta btn btn-primary" href="ponentes.html">Conoce el programa</a>
       </header>
+
+      <aside class="poster__stamp" aria-label="Datos clave del evento">
+        <p class="poster__stamp-date">12 · 15 JUL</p>
+        <p class="poster__stamp-location">Barcelona &amp; online</p>
+        <p class="poster__stamp-note">Gastronomía viva</p>
+      </aside>
+
+      <section class="poster__cta-panel" aria-label="Reserva tu plaza">
+        <p class="poster__cta-title">Plazas limitadas</p>
+        <p class="poster__cta-copy">Experiencias en grupos reducidos, showcookings y degustaciones al atardecer.</p>
+        <a class="poster__cta-secondary btn btn-outline" href="articulo.html">Lee la crónica previa</a>
+      </section>
 
       <section class="poster__grid" aria-label="Destacados del programa">
         <article class="poster-card">

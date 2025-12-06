@@ -4,106 +4,357 @@
 @include layer-pages {
   .poster {
     @include container-inline;
+    position: relative;
+    container-type: inline-size;
+    container-name: poster;
     display: grid;
-    gap: clamp(1.5rem, 2vw, 2.5rem);
-    padding: vars.$container-padding;
-    max-width: vars.$max-width;
-    margin: 0 auto 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    align-items: start;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+      "nav hero hero hero hero hero hero hero hero stamp stamp pattern"
+      "nav hero hero hero hero hero hero hero hero cta cta pattern"
+      "nav grid grid grid grid grid grid grid grid grid grid pattern";
+    gap: clamp(1rem, 2vw, 1.75rem);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    margin: 0 auto clamp(2rem, 4vw, 4rem);
+    border-radius: vars.$border-radius-lg;
+    background: radial-gradient(circle at 12% 12%, rgba(255, 209, 143, 0.25), transparent 28%),
+      radial-gradient(circle at 82% 10%, rgba(109, 145, 255, 0.24), transparent 35%),
+      color-mix(in srgb, vars.$body-bg 90%, #fff 10%);
+    box-shadow: vars.$shadow-card;
+    overflow: hidden;
+    isolation: isolate;
   }
 
-  .poster__intro {
-    grid-column: 1 / -1;
+  .poster__pattern {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0 10%, transparent 10% 20%) repeat;
+    background-size: clamp(1.5rem, 3vw, 2.6rem) clamp(1.5rem, 3vw, 2.6rem);
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    z-index: 0;
+  }
+
+  .poster__nav,
+  .poster__hero,
+  .poster__grid,
+  .poster__cta-panel,
+  .poster__stamp {
+    position: relative;
+    z-index: 1;
+  }
+
+  .poster__nav {
+    grid-area: nav;
     display: grid;
-    gap: 0.75rem;
-    padding: clamp(1.5rem, 3vw, 2rem);
-    background: vars.$gradient-primary;
-    border-radius: vars.$border-radius-lg;
-    color: #0d0f1a;
+    gap: 1rem;
+    align-content: start;
+    padding: clamp(1.25rem, 2vw, 1.75rem);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.85));
+    color: #f8fafc;
+    border-radius: calc(vars.$border-radius-lg - 2px);
     box-shadow: vars.$shadow-card;
   }
 
+  .poster__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .poster__brand-icon {
+    font-size: 1.5em;
+  }
+
+  .poster__brand-name {
+    font-weight: 700;
+  }
+
+  .poster__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .poster__menu-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: vars.$border-radius;
+    color: inherit;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.06);
+    transition: transform 150ms ease, background-color 150ms ease;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
+    }
+  }
+
+  .poster__hero {
+    grid-area: hero;
+    display: grid;
+    gap: clamp(0.6rem, 1vw, 1rem);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: vars.$border-radius-lg;
+    box-shadow: vars.$shadow-card;
+  }
+  .poster__eyebrow {
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, #e2e8f0 85%, #7dd3fc 15%);
+  }
+
+
   .poster__title {
     margin: 0;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.05;
   }
 
   .poster__subtitle {
     margin: 0;
-    max-width: 42ch;
-    color: #0f172a;
-    font-weight: 600;
+    font-size: clamp(1rem, 2.4vw, 1.2rem);
+    color: color-mix(in srgb, #e2e8f0 80%, #cbd5e1 20%);
+    max-width: 46ch;
+
   }
 
   .poster__meta {
     display: flex;
-    gap: 0.5rem;
     flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .poster__tagline {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: vars.$border-radius;
+    font-weight: 600;
+  }
+
+  .poster__cta {
+    justify-self: start;
+  }
+
+  .poster__stamp {
+    grid-area: stamp;
+    align-self: start;
+    padding: clamp(1rem, 2vw, 1.4rem);
+    border-radius: vars.$border-radius-lg;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.8));
+    border: 1px dashed rgba(15, 23, 42, 0.12);
+    box-shadow: vars.$shadow-card;
+    text-align: center;
+  }
+
+  .poster__stamp-date {
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .poster__stamp-location {
+    margin: 0.35rem 0 0;
+    font-weight: 700;
+  }
+
+  .poster__stamp-note {
+    margin: 0.35rem 0 0;
+    font-size: 0.95rem;
+    color: #475569;
+  }
+
+  .poster__cta-panel {
+    grid-area: cta;
+    display: grid;
+    gap: 0.6rem;
+    align-content: center;
+    padding: clamp(1.25rem, 2vw, 1.6rem);
+    background: linear-gradient(140deg, rgba(255, 214, 102, 0.95), rgba(255, 148, 102, 0.9));
+    border-radius: vars.$border-radius-lg;
+    box-shadow: vars.$shadow-card;
+  }
+
+  .poster__cta-title {
+    margin: 0;
+    font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .poster__cta-copy {
+    margin: 0;
+    max-width: 36ch;
+    color: #2b1d0f;
+  }
+
+  .poster__cta-secondary {
+    justify-self: start;
+    border-color: rgba(0, 0, 0, 0.25);
+    color: #1f2937;
   }
 
   .poster__grid {
+    grid-area: grid;
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    align-content: start;
   }
 
-  .poster__list {
-    padding-left: 1.1rem;
+  .poster-card {
+    padding: clamp(1.1rem, 2vw, 1.6rem);
+    border-radius: vars.$border-radius-lg;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: vars.$shadow-card;
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .poster-card__title {
     margin: 0;
-    display: grid;
-    gap: 0.35rem;
+    font-size: clamp(1.1rem, 2.4vw, 1.4rem);
   }
 
-  .poster__chips {
+  .poster-card__text {
+    margin: 0;
+    color: #334155;
+  }
+
+  .poster-card__list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.3rem;
+    color: #0f172a;
+  }
+
+  .poster-card__chips {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
 
-  .poster__card {
-    padding: 1.2rem 1.4rem;
-  }
-
-  .poster__card :is(h2, p) {
+  .poster-card__quote {
     margin: 0;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid vars.$color-primary;
+    background: rgba(241, 245, 249, 0.9);
+    border-radius: vars.$border-radius;
   }
 
-  .poster__card:nth-child(odd) {
-    background: color-mix(in srgb, #fff 90%, vars.$body-bg 10%);
+  .poster-card__quote cite {
+    display: block;
+    margin-top: 0.35rem;
+    color: #475569;
+    font-style: normal;
+    font-weight: 600;
   }
 
-  .poster__card:has(.btn-outline) {
-    border: 1px dashed rgba(17, 24, 39, 0.1);
+  .poster-card__link {
+    justify-self: start;
   }
 
-  @container section-box (min-width: 760px) {
+  @container poster (max-width: 62rem) {
     .poster {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
       grid-template-areas:
-        "intro intro intro"
-        "card1 card2 card3"
-        "card4 card4 card3";
+        "nav nav nav nav nav nav nav nav"
+        "hero hero hero hero hero hero hero hero"
+        "stamp stamp stamp stamp cta cta cta cta"
+        "grid grid grid grid grid grid grid grid";
     }
 
-    .poster__intro {
-      grid-area: intro;
+    .poster__nav {
+      grid-auto-flow: column;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 0.75rem;
     }
 
-    .poster__card:nth-child(1) {
-      grid-area: card1;
+    .poster__menu {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
     }
 
-    .poster__card:nth-child(2) {
-      grid-area: card2;
+    .poster__menu-link {
+      justify-content: center;
     }
 
-    .poster__card:nth-child(3) {
-      grid-area: card3;
-    }
-
-    .poster__card:nth-child(4) {
-      grid-area: card4;
+    .poster__cta,
+    .poster__cta-secondary {
+      justify-self: start;
     }
   }
+
+  @container poster (max-width: 46rem) {
+    .poster {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-areas:
+      "nav nav nav nav"
+        "hero hero hero hero"
+        "stamp stamp cta cta"
+        "grid grid grid grid";
+      padding: clamp(1.25rem, 6vw, 1.8rem);  
+    }
+
+    .poster__hero,
+    .poster__nav,
+    .poster__cta-panel,
+    .poster__stamp {
+      text-align: left;
+    }
+
+    .poster__menu {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .poster__title {
+      font-size: clamp(2rem, 8vw, 2.6rem);
+    }
+
+    .poster__tagline {
+      font-size: 1rem;
+    }
+  }
+
+  @supports not (display: grid) {
+    .poster {
+      display: flex;
+      flex-direction: column;
+      background: color-mix(in srgb, vars.$body-bg 92%, #fff 8%);
+    }
+
+    .poster__nav {
+      order: -1;
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .poster__pattern {
+      display: none;
+    }
+  }
+  
 }
