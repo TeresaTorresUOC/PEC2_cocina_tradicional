@@ -25,6 +25,17 @@
     overflow: hidden;
     isolation: isolate;
   }
+  .poster::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(120deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.35)),
+      url("../images/port-borriana.webp");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.75;
+  }
 
   .poster__pattern {
     position: absolute;
@@ -47,61 +58,24 @@
 
   .poster__nav {
     grid-area: nav;
-    display: grid;
-    gap: 1rem;
-    align-content: start;
-    padding: clamp(1.25rem, 2vw, 1.75rem);
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.85));
-    color: #f8fafc;
-    border-radius: calc(vars.$border-radius-lg - 2px);
-    box-shadow: vars.$shadow-card;
-  }
-
-  .poster__brand {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    justify-content: center;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.82));
+    color: #0f172a;
+    border-radius: 999px;
+    box-shadow: vars.$shadow-card;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
   }
 
-  .poster__brand-icon {
-    font-size: 1.5em;
-  }
-
-  .poster__brand-name {
-    font-weight: 700;
-  }
-
-  .poster__menu {
-    list-style: none;
-    padding: 0;
+  .poster__nav-title {
     margin: 0;
-
-    display: grid;
-    gap: 0.75rem;
-  }
-
-  .poster__menu-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: 0.45rem 0.75rem;
-    border-radius: vars.$border-radius-md;
-    color: inherit;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.06);
-    transition: transform 150ms ease, background-color 150ms ease;
-
- 
-
-    &:hover,
-    &:focus-visible {
-      background: rgba(255, 255, 255, 0.12);
-      transform: translateX(4px);
-    }
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-align: center;
+   
   }
 
   .poster__hero {
@@ -113,6 +87,8 @@
     color: #e2e8f0;
     border-radius: vars.$border-radius-lg;
     box-shadow: vars.$shadow-card;
+    text-align: center;
+    align-items: center;
   }
   .poster__eyebrow {
     font-size: 0.95rem;
@@ -132,6 +108,7 @@
     font-size: clamp(1rem, 2.4vw, 1.2rem);
     color: color-mix(in srgb, #e2e8f0 80%, #cbd5e1 20%);
     max-width: 46ch;
+    margin-inline: auto;
 
   }
 
@@ -139,6 +116,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
   }
 
   .poster__tagline {
@@ -147,10 +125,11 @@
     background: rgba(255, 255, 255, 0.06);
     border-radius: vars.$border-radius-md;
     font-weight: 600;
+    text-align: center;
   }
 
   .poster__cta {
-    justify-self: start;
+    justify-self: center;
   }
 
   .poster__stamp {
@@ -191,6 +170,8 @@
     background: linear-gradient(140deg, rgba(255, 214, 102, 0.95), rgba(255, 148, 102, 0.9));
     border-radius: vars.$border-radius-lg;
     box-shadow: vars.$shadow-card;
+    text-align: center;
+    justify-items: center;
   }
 
   .poster__cta-title {
@@ -208,7 +189,7 @@
   }
 
   .poster__cta-secondary {
-    justify-self: start;
+    justify-self: center;
     border-color: rgba(0, 0, 0, 0.25);
     color: #1f2937;
   }
@@ -252,6 +233,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
   }
   .poster-card__quote {
     margin: 0;
@@ -284,57 +266,17 @@
         "grid grid grid grid grid grid grid grid";
     }
 
-    .poster__nav {
-      grid-auto-flow: column;
-      grid-template-columns: 1fr;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .poster__menu {
-      grid-auto-flow: column;
-      grid-auto-columns: 1fr;
-    }
-
-    .poster__menu-link {
-      justify-content: center;
-    }
-
-    .poster__cta,
-    .poster__cta-secondary {
-      justify-self: start;
-    }
   }
 
   @container poster (max-width: 46rem) {
     .poster {
       grid-template-columns: repeat(4, minmax(0, 1fr));
       grid-template-areas:
-      "nav nav nav nav"
+        "nav nav nav nav"
         "hero hero hero hero"
         "stamp stamp cta cta"
         "grid grid grid grid";
-      padding: clamp(1.25rem, 6vw, 1.8rem);  
-    }
-
-    .poster__hero,
-    .poster__nav,
-    .poster__cta-panel,
-    .poster__stamp {
-      text-align: left;
-    }
-
-    .poster__menu {
-      grid-auto-flow: row;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-
-    .poster__title {
-      font-size: clamp(2rem, 8vw, 2.6rem);
-    }
-
-    .poster__tagline {
-      font-size: 1rem;
+        padding: clamp(1.25rem, 6vw, 1.8rem);
     }
   }
 

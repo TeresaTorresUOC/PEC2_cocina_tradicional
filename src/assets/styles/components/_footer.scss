@@ -48,15 +48,14 @@
 
   .site-footer__logo {
     margin: 0;
-    width: clamp(110px, 14vw, 150px);
-    height: clamp(70px, 10vw, 90px);
-    padding: 0.45rem 0.65rem;
-    border-radius: 999px;
-    background: color-mix(in srgb, #fff 88%, #e2e8f0 12%);
-    border: 1px solid rgba(15, 23, 42, 0.08);
+    width: clamp(86px, 12vw, 120px);
+    height: clamp(60px, 9vw, 78px);
+    padding: 0;
     display: grid;
     place-items: center;
-    box-shadow: vars.$shadow-soft;
+    background: none;
+    border: none;
+    box-shadow: none;
 
     img {
       display: block;
