@@ -15,6 +15,7 @@
     color: vars.$body-color;
     container-type: inline-size;
     container-name: article;
+    justify-items: center;
   }
   .article__hero-media {
     margin: 0;
@@ -24,6 +25,7 @@
     box-shadow: vars.$shadow-card;
     aspect-ratio: 16 / 7;
     background: #0f172a;
+    max-width: min(100%, 960px);
 
     img {
       width: 100%;
@@ -40,6 +42,8 @@
       color: #fff;
       font-weight: 700;
       letter-spacing: 0.01em;
+      text-align: center;
+
     }
   }
 
@@ -48,6 +52,7 @@
     gap: 0.5rem;
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
     padding-bottom: 1rem;
+    text-align: center;
   }
 
   .article__kicker {
@@ -61,7 +66,7 @@
   .article__title {
     line-height: 1.15;
     margin: 0;
-    max-width: 36ch;
+    max-width: none;
   }
 
   .article__subtitle {
@@ -71,7 +76,7 @@
   }
 
   .article__meta {
-    margin: 0;
+    margin: 0 auto;
     color: rgba(15, 23, 42, 0.75);
     font-weight: 600;
     display: inline-flex;
@@ -83,9 +88,11 @@
     display: grid;
     gap: clamp(1rem, 1.5vw, 1.5rem);
     max-width: 70ch;
+    text-align: center;
     line-height: 1.75;
     font-size: clamp(1rem, 0.9rem + 0.3vw, 1.05rem);
     letter-spacing: 0.01em;
+    justify-items: center;
   }
 
   .article-content :is(h2, h3, h4) {
@@ -101,6 +108,7 @@
     overflow: hidden;
     box-shadow: vars.$shadow-card;
     background: #0f172a;
+    width: min(100%, 840px);
 
     img {
       display: block;
@@ -113,6 +121,7 @@
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.75));
       color: #fff;
       font-size: 0.97rem;
+      text-align: center;
     }
 
   }
@@ -130,6 +139,7 @@
     display: grid;
     gap: 0.4rem;
     font-size: 1.05rem;
+    text-align: center;
   }
 
   .article__quote cite {
@@ -138,11 +148,11 @@
   }
 
   .article__list {
-    padding-left: 1.1rem;
+    padding-left: 0;
+    list-style-position: inside;
     display: grid;
     gap: 0.45rem;
-    margin: 0;
-    
+    margin: 0; 
   }
 
   .article:has(blockquote) {
@@ -166,27 +176,8 @@
  
   @container article (min-width: 960px) {
     .article-content {
-      grid-template-columns: 3fr 2fr;
-      align-items: start;
-      column-gap: clamp(1.5rem, 3vw, 2rem);
-    }
-  }
-   
-  .article-content > :not(.article__media):not(.article__media--inline):not(blockquote) {
-    grid-column: 1;
-    }
-
-    .article__media {
-      grid-column: 2;
-      align-self: start;
-    }
-
-    .article__media--inline {
-      grid-column: 1 / -1;
-    }
-
-    .article__quote {
-      grid-column: 1 / -1;
+      grid-template-columns: 1fr;
+      justify-items: center;
     }
   }
   @container article (max-width: 680px) {
@@ -204,3 +195,4 @@
    
     }
   }
+}

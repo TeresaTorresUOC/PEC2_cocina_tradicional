@@ -2,18 +2,18 @@
 @use "../abstracts/mixins" as *;
 
 @include layer-components {
-  .site__footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
+  .site-footer {
+    display: grid;
+    gap: 0.9rem;
     align-items: center;
-    padding: 1.5rem vars.$container-padding 2rem;
+    justify-items: center;
+    padding: 1.75rem vars.$container-padding 2.25rem;
     background: color-mix(in srgb, vars.$body-bg 75%, #ffffff 25%);
     border-top: 1px solid rgba(17, 24, 39, 0.08);
+    text-align: center;
   }
 
-  .footer__brand {
+  .site-footer__brand {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -21,32 +21,71 @@
     color: vars.$neutral-900;
   }
 
-  .footer__links {
+  .site-footer__mark {
+    font-size: 1.35rem;
+  }
+
+  .site-footer__text {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .site-footer__title {
+    margin: 0;
+  }
+
+  .site-footer__tagline {
+    margin: 0;
+    color: color-mix(in srgb, vars.$neutral-800 70%, #475569 30%);
+  }
+
+  .site-footer__partners {
     display: inline-flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
+    gap: 0.85rem;
   }
 
-  .footer__link {
+  .site-footer__logo {
+    margin: 0;
+    width: clamp(110px, 14vw, 150px);
+    height: clamp(70px, 10vw, 90px);
+    padding: 0.45rem 0.65rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, #fff 88%, #e2e8f0 12%);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    display: grid;
+    place-items: center;
+    box-shadow: vars.$shadow-soft;
+
+    img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .site-footer__meta {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem 1.35rem;
+    color: vars.$neutral-900;
+   
+  }
+
+  .site-footer__detail {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    color: vars.$neutral-900;
-    font-weight: 600;
+    gap: 0.45rem;
+    font-weight: 700;
   }
 
-  .footer__link--icon {
-    padding: 0.4rem 0.65rem;
-    border-radius: vars.$border-radius-pill;
-    background: rgba(75, 214, 179, 0.16);
-    border: 1px solid rgba(75, 214, 179, 0.35);
-  }
-
-  .footer__legal {
-    flex: 1 1 100%;
-    margin: 0.2rem 0 0;
+  .site-footer__credits {
+    margin: 0.35rem 0 0;
     color: vars.$neutral-700;
-    font-size: 0.95rem;
+    font-weight: 600;
   }
 }
