@@ -26,6 +26,7 @@
     gap: clamp(1.2rem, 2vw, 1.8rem);
     container-type: inline-size;
     container-name: speakers;
+    padding-bottom: clamp(2rem, 4vw, 3.5rem);
   }
 
   .speakers__header {
@@ -39,17 +40,17 @@
   }
 
   .speakers__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(1rem, 2vw, 1.5rem);
-    justify-content: center;
-    max-width: 62rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: clamp(1.1rem, 2vw, 1.75rem);
+    justify-items: center;
+    max-width: min(72rem, 100%);
     margin-inline: auto;
   }
 
   .speakers__item {
-    flex: 1 1 100%;
-    min-width: 280px;
+    width: 100%;
+    max-width: 26rem;
     display: flex;
     justify-content: center;
   }
@@ -122,8 +123,7 @@
 
   @container speakers (min-width: 620px) {
     .speakers__item {
-      flex: 1 1 calc(50% - clamp(0.5rem, 1vw, 0.75rem));
-      max-width: 26rem;
+      max-width: 24rem;
   }
 
   @container speakers (min-width: 980px) {
