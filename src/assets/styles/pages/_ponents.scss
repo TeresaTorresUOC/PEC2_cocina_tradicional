@@ -43,6 +43,8 @@
     flex-wrap: wrap;
     gap: clamp(1rem, 2vw, 1.5rem);
     justify-content: center;
+    max-width: 62rem;
+    margin-inline: auto;
   }
 
   .speakers__item {
@@ -120,7 +122,8 @@
 
   @container speakers (min-width: 620px) {
     .speakers__item {
-      flex-basis: 50%;
+      flex: 1 1 calc(50% - clamp(0.5rem, 1vw, 0.75rem));
+      max-width: 26rem;
   }
 
   @container speakers (min-width: 980px) {
@@ -130,11 +133,11 @@
       max-width: 22rem;
     }
   }
+
   @container speakers (min-width: 640px) and (max-width: 840px) {
     .speaker-card__media img {
       object-position: center 35%;
       filter: saturate(1.05);
-  
     }
   }
  }
