@@ -40,16 +40,17 @@
   }
 
   .speakers__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: clamp(1.1rem, 2vw, 1.75rem);
-    justify-items: center;
+    justify-content: center;
+    align-items: stretch;
     max-width: min(72rem, 100%);
     margin-inline: auto;
   }
 
   .speakers__item {
-    width: 100%;
+    flex: 1 1 240px;
     max-width: 26rem;
     display: flex;
     justify-content: center;
@@ -123,10 +124,15 @@
 
   @container speakers (min-width: 620px) {
     .speakers__item {
+      flex-basis: 260px;
       max-width: 24rem;
   }
 
   @container speakers (min-width: 980px) {
+    .speakers__list {
+      justify-content: space-between;
+    }
+
     .speaker-card {
       flex-direction: column;
       align-items: center;
