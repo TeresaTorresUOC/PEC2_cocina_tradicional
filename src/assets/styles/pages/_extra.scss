@@ -63,12 +63,12 @@
   .contact-card__subtitle,
   .gallery-card__subtitle {
     margin: 0 0 1rem;
-    color: color-mix(in srgb, vars.$text-color 78%, #475569 22%);
+    color: color-mix(in srgb, vars.$body-color 78%, #475569 22%);
   }
 
   .contact-card__form {
     background: color-mix(in srgb, #fff 92%, #f8fafc 8%);
-    border-radius: vars.$border-radius;
+    border-radius: vars.$form-radius;
     padding: clamp(1rem, 1.5vw, 1.4rem);
     border: 1px dashed color-mix(in srgb, #94a3b8 40%, #cbd5e1 60%);
     display: grid;
@@ -77,7 +77,7 @@
 
   .contact-card .form-label {
     font-weight: 700;
-    color: color-mix(in srgb, vars.$text-color 80%, #0f172a 20%);
+    color: color-mix(in srgb, vars.$body-color 80%, #0f172a 20%);
   }
 
   .contact-card__submit {
@@ -92,7 +92,7 @@
   .contact-card__helper {
     margin: 0.25rem 0 0;
     font-size: clamp(0.92rem, 0.9rem + 0.2vw, 0.98rem);
-    color: color-mix(in srgb, vars.$text-color 78%, #0ea5e9 22%);
+    color: color-mix(in srgb, vars.$body-color 78%, #0ea5e9 22%);
   }
 
   .gallery-card {
@@ -116,7 +116,7 @@
 
   .gallery__item {
     position: relative;
-    border-radius: vars.$border-radius;
+    border-radius: vars.$border-radius-md;
     overflow: hidden;
     aspect-ratio: 4 / 3;
     background: #e2e8f0;
