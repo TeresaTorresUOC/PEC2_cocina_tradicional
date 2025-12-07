@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as *;
 
 
-@include layer-components {
+@include layer-layout {
   .form {
     @include card-surface;
     padding: 1.5rem;
@@ -63,4 +63,5 @@
     outline: 2px solid color-mix(in lab, vars.$coral 55%, #ffffff 45%);
     outline-offset: 4px;
   }
+  
 }

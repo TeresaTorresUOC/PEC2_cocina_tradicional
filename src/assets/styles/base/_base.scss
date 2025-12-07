@@ -16,6 +16,7 @@
     font-family: vars.$font-family-sans-serif;
     background: vars.$body-bg;
     color: vars.$body-color;
+    line-height: 1.6;
   }
 
   a {
@@ -27,7 +28,9 @@
     max-width: 100%;
     display: block;
   }
+
   .sr-only {
     @include sr-only;
   }
+  
 }

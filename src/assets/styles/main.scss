@@ -1,45 +1,34 @@
-/**
- * Ajustes y utilidades (ITCSS: Settings + Tools)
- */
+// Settings and tools
+@use "abstracts/index" as *;
 
-@use "abstracts/functions";
-@use "./variables" as *;
-@use "./utils/mixins";
+// Declare cascade layer order
+@layer reset, base, layout, components, utilities, pages;
 
+// Vendors
+@use "vendors/fonts";
+@use "vendors/bootstrap";
 
+// Base
+@use "base/reset";
+@use "base/base";
+@use "base/typography";
 
-/**
- * vendors
- */
- @use "vendors/fonts";
- @use "vendors/bootstrap";
- 
- /**
-  * Base
-  */
- @use "base/reset";
- @use "base/typography";
- 
- /**
-  * Layout
-  */
- @use "layout/grid";
- @use "layout/forms";
- 
- /**
-  * Components
- */
+// Layout
+@use "layout/grid";
+@use "layout/forms";
 
+// Components
 @use "components/buttons";
 @use "components/badges";
 @use "components/cards";
 @use "components/accordion";
 @use "components/footer";
 
-/**
- * Pages
- */
- @use "pages/home";
+// Utilities
+@use "utilities/containers";
+
+// Pages
+@use "pages/home";
 @use "pages/ponentes";
 @use "pages/article";
 @use "pages/extra";

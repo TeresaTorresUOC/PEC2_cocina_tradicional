@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+
+@include layer-utilities {
+  .u-container {
+    width: min(vars.$max-width, calc(100% - (vars.$container-padding * 2)));
+    margin-inline: auto;
+    padding-inline: vars.$container-padding;
+  }
+
+  .u-section-shell {
+    @include container-inline;
+    display: grid;
+    gap: vars.$spacer;
+  }
+
+  .card-grid {
+    display: grid;
+    gap: vars.$spacer;
+  }
+
+  @include cquery(vars.$container-name-sections, "min-width: #{vars.$card-container-min}") {
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+
+    .card-grid .card {
+      grid-template-columns: minmax(14rem, 1fr) minmax(10rem, 0.8fr);
+      align-items: center;
+    }
+  }
+}

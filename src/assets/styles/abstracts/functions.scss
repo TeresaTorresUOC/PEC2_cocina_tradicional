@@ -1,7 +1,17 @@
+@use "sass:color";
+
 @function fluid($min, $max, $viewport-min: 320px, $viewport-max: 1200px) {
-    @return clamp(
-      $min,
-      calc(#{$min} + (#{$max} - #{$min}) * ((100vw - #{$viewport-min}) / (#{$viewport-max} - #{$viewport-min}))),
-      $max
-    );
+  @return clamp(
+    $min,
+    calc(#{$min} + (#{$max} - #{$min}) * ((100vw - #{$viewport-min}) / (#{$viewport-max} - #{$viewport-min}))),
+    $max
+  );
+}
+
+@function rem($px, $base: 16px) {
+  @return ($px / $base) * 1rem;
+}
+
+@function shade($tone, $percentage) {
+  @return color.mix(#000, $tone, $percentage);
 }

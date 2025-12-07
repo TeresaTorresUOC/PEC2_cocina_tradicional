@@ -1,0 +1,18 @@
+@use "../abstracts/mixins" as *;
+
+@include layer-reset {
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+  }
+
+  :where(img, svg) {
+    vertical-align: middle;
+  }
+
+  :where(button, input, textarea, select) {
+    font: inherit;
+    background: transparent;
+    border: none;
+  }
+}

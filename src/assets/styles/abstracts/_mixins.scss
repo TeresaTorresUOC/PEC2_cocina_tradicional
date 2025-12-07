@@ -1,5 +1,6 @@
-@use "../variables" as vars;
+@use "variables" as vars;
 
+// Container helpers
 @mixin container-inline {
   container-type: inline-size;
   container-name: section-box;
@@ -22,9 +23,22 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+// Cascade layer helpers
+@mixin layer-reset {
+  @layer reset {
+    @content;
+  }
+}
+
 
 @mixin layer-base {
   @layer base {
+    @content;
+  }
+}
+
+@mixin layer-layout {
+  @layer layout {
     @content;
   }
 }
@@ -35,8 +49,27 @@
   }
 }
 
+@mixin layer-utilities {
+  @layer utilities {
+    @content;
+  }
+}
+
 @mixin layer-pages {
   @layer pages {
+    @content;
+  }
+}
+
+// Media helpers
+@mixin media-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin cquery($name, $condition) {
+  @container #{$name} (#{$condition}) {
     @content;
   }
 }
