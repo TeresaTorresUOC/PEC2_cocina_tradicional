@@ -10,7 +10,7 @@
     "dev": "npm-run-all clean parcel:serve",
     "build": "npm-run-all clean parcel:build",
     "test": "echo 'Everything is working as expected \nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
-    "lint:css": "stylelint \"src/**/*.{scss,css}\"",
+    "lint:css": "stylelint 'src/**/*.scss'",
     "lint:styles": "npm run lint:css"
   },
   "targets": {
@@ -47,6 +47,7 @@
     "sharp": "^0.33.5",
     "stylelint": "^16.11.0",
     "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.4.1",
     "stylelint-order": "^6.0.4",
     "stylelint-selector-bem-pattern": "^3.0.1"
   },

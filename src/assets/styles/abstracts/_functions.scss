@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:math";
 
 @function fluid($min, $max, $viewport-min: 320px, $viewport-max: 1200px) {
   @return clamp(
@@ -14,4 +15,8 @@
 
 @function shade($tone, $percentage) {
   @return color.mix(#000, $tone, $percentage);
+}
+
+@function spacing($step, $base: 1rem, $ratio: 1.25) {
+  @return math.pow($ratio, $step) * $base;
 }

@@ -1,4 +1,6 @@
 @use "sass:color";
+@use "sass:map";
+@use "./functions" as fn;
 
 // Typography
 $font-family-sans-serif: "Space Grotesk", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -14,6 +16,11 @@ $amber: #ffb347;
 $ink: #111827;
 $accent: color.mix($coral, $amber, 55%);
 
+// Branding (se reutiliza en Bootstrap y en componentes propios)
+$brand-primary: $coral;
+$brand-secondary: $emerald;
+$brand-contrast: $ink;
+
 // Surfaces
 $body-bg: color.mix(#f7f1e3, #ffffff, 60%);
 $body-color: $neutral-900;
@@ -27,20 +34,27 @@ $border-radius-md: 18px;
 $border-radius-pill: 999px;
 
 // Spacing & sizing
-$spacer: 1rem;
-$container-padding: clamp(1rem, 2vw, 2rem);
+$space-scale: (
+  xs: fn.spacing(-1), // ~0.8rem
+  sm: fn.spacing(0), // 1rem
+  md: fn.spacing(1), // 1.25rem
+  lg: fn.spacing(2), // 1.56rem
+  xl: fn.spacing(3) // 1.95rem
+);
+$spacer: map.get($space-scale, md);
+$container-padding: clamp(map.get($space-scale, sm), 2vw, map.get($space-scale, lg));
 $max-width: 1200px;
 $mq-min-width: 420px;
 
 // Components
-$btn-padding-y: 0.85rem;
-$btn-padding-x: 1.6rem;
+$btn-padding-y: fn.spacing(0, 0.9rem);
+$btn-padding-x: fn.spacing(0.5, 1.4rem);
 $btn-border-radius: $border-radius-pill;
 $btn-font-weight: 700;
 $btn-shadow: $shadow-soft;
 
 $card-border-radius: $border-radius-lg;
-$card-padding: 1.5rem;
+$card-padding: map.get($space-scale, xl);
 $card-bg: #fff;
 $card-border: 1px solid rgba(17, 24, 39, 0.06);
 
