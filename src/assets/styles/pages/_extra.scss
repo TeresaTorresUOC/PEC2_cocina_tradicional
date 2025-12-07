@@ -3,22 +3,27 @@
 
 @include layer-pages {
   .page--extra {
-    min-height: 70dvh;
-    padding-block-end: clamp(2rem, 4svh, 3.5rem);
+    min-height: 75dvh;
+    padding: vars.$container-padding;
     background: radial-gradient(circle at 15% 20%, color-mix(in srgb, #fef6e4 80%, #ffe7c7 20%), transparent 45%),
       radial-gradient(circle at 85% 10%, color-mix(in srgb, #dbeafe 80%, #c4b5fd 20%), transparent 40%),
       color-mix(in lch, lch(95% 10 85) 70%, lch(88% 25 40) 30%);
     color: vars.$text-color;
   }
 
+  .page--extra .page__title {
+    margin: 0;
+  }
+
   .extra-panels {
     @include container-inline;
     display: grid;
     gap: clamp(1.5rem, 2.5vw, 2.5rem);
-    grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(25rem, 100%), 1fr));
     margin: clamp(1.5rem, 3vw, 2.5rem) auto;
     padding: clamp(1.25rem, 2vw, 1.75rem);
     container-name: extra-panels;
+    container-type: inline-size;
   }
 
   .contact-card,
@@ -27,7 +32,7 @@
     overflow: hidden;
     padding: clamp(1.5rem, 2vw + 0.5rem, 2.25rem);
     border-radius: vars.$border-radius-lg;
-    background: color-mix(in srgb, #fff 85%, #f1f5f9 15%);
+    background: color-mix(in srgb, #fff 88%, #f1f5f9 12%);
     border: 1px solid color-mix(in srgb, #cbd5e1 40%, #e2e8f0 60%);
     box-shadow: vars.$shadow-card;
     isolation: isolate;
@@ -66,6 +71,8 @@
     border-radius: vars.$border-radius;
     padding: clamp(1rem, 1.5vw, 1.4rem);
     border: 1px dashed color-mix(in srgb, #94a3b8 40%, #cbd5e1 60%);
+    display: grid;
+    gap: 0.75rem;
   }
 
   .contact-card .form-label {
@@ -74,7 +81,7 @@
   }
 
   .contact-card__submit {
-    padding: 0.85rem clamp(1.1rem, 2vw, 1.5rem);
+    padding: 0.9rem clamp(1.2rem, 2vw, 1.6rem);
     font-weight: 700;
     letter-spacing: 0.01em;
     background: color-mix(in srgb, #2563eb 65%, #a855f7 35%);
@@ -83,8 +90,8 @@
   }
 
   .contact-card__helper {
-    margin: 0.5rem 0 0;
-    font-size: 0.95rem;
+    margin: 0.25rem 0 0;
+    font-size: clamp(0.92rem, 0.9rem + 0.2vw, 0.98rem);
     color: color-mix(in srgb, vars.$text-color 78%, #0ea5e9 22%);
   }
 
@@ -163,20 +170,43 @@
     opacity: 0.4;
   }
 
+  .gallery:has(img[alt*="paella"]) {
+    border: 1px solid color-mix(in srgb, lab(85% 20 60) 60%, lab(90% -5 -10) 40%);
+    border-radius: vars.$border-radius-lg;
+    padding: clamp(0.6rem, 1vw, 0.9rem);
+  }
+
   @container extra-panels (min-width: 60rem) {
     .contact-card {
-      min-height: 40svh;
+      min-height: 45svh;
     }
 
     .gallery-card {
-      min-height: 40lvh;
+      min-height: 45lvh;
       align-self: stretch;
     }
   }
 
-  @container gallery-grid (min-width: 30rem) {
-    .gallery__caption {
-      font-size: clamp(1rem, 1vw + 0.2rem, 1.1rem);
+  @container gallery-grid (max-width: 420px) {
+    .gallery {
+      grid-template-columns: 1fr;
     }
   }
+
+  @container gallery-grid (min-width: 32rem) {
+    .gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @container gallery-grid (min-width: 56rem) {
+    .gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .gallery__item:nth-child(odd) img {
+      transform: scale(1.02);
+    }
+  }
+  
 }

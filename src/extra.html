@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" /><!-- do not remove this line! -->
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
     <title>Contacte i galeria · IV Jornades de Cuina Tradicional Valenciana</title>
   </head>
   <body class="site" data-page="extra">
@@ -13,49 +13,89 @@
       <header class="page__hero" aria-labelledby="contacte-title">
         <p class="page__kicker">Participa</p>
         <h1 class="page__title" id="contacte-title">Contacte i galeria</h1>
-        <p class="page__lead">Envia les teues preguntes i consulta les imatges de les jornades.</p>
+        <p class="page__lead">Resol dubtes, inscriu-te a les jornades i inspira't amb els plats que degustarem.</p>
       </header>
 
-      <section class="contact" aria-labelledby="form-title">
-        <h2 class="contact__title" id="form-title">Formulari de contacte</h2>
-        <form class="contact__form" action="#" method="post">
-          <div class="contact__field">
-            <label class="contact__label" for="name">Nom i cognoms</label>
-            <input class="contact__input" type="text" id="name" name="name" required />
+      <div class="extra-panels">
+        <section class="contact-card" aria-labelledby="form-title">
+          <div class="contact-card__header">
+            <h2 class="contact-card__title" id="form-title">Contacte</h2>
+            <p class="contact-card__subtitle">Per a inscripcions, informació general o propostes de tallers.</p>
+            
           </div>
-          <div class="contact__field">
-            <label class="contact__label" for="email">Correu electrònic</label>
-            <input class="contact__input" type="email" id="email" name="email" required />
+          <form
+          class="contact-card__form needs-validation"
+          name="contacte-jornades"
+          method="post"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contacte-jornades" />
+          <p class="visually-hidden">
+            <label>Si ets humà, deixa aquest camp buit <input name="bot-field" /></label>
+          </p>
+          <div class="mb-3">
+            <label class="form-label" for="full-name">Nom complet</label>
+            <input class="form-control" type="text" id="full-name" name="nom" placeholder="Nom i cognoms" required />
           </div>
-          <div class="contact__field">
-            <label class="contact__label" for="message">Missatge</label>
-            <textarea class="contact__textarea" id="message" name="message" rows="4"></textarea>
+          <div class="mb-3">
+            <label class="form-label" for="email">Correu electrònic</label>
+            <input class="form-control" type="email" id="email" name="email" placeholder="nom@exemple.com" required />
           </div>
-          <button class="btn btn-primary contact__submit" type="submit">Enviar</button>
+          <div class="mb-3">
+            <label class="form-label" for="tipus">Tipus de consulta</label>
+            <select class="form-select" id="tipus" name="tipus" required>
+              <option value="">Selecciona una opció</option>
+              <option>Inscripció</option>
+              <option>Informació general</option>
+              <option>Proposta de taller</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="missatge">Missatge</label>
+            <textarea class="form-control" id="missatge" name="missatge" rows="4" placeholder="Escriu el teu missatge"></textarea>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="politiques" name="politiques" required />
+            <label class="form-check-label" for="politiques">Accepto la política de dades de les jornades</label>
+          </div>
+          <button class="btn btn-primary contact-card__submit" type="submit">Enviar missatge</button>
+          <p class="contact-card__helper">* Formulari preparat per a Netlify Forms.</p>
         </form>
       </section>
-      <!-- Galeria preparada per a Flex/Grid i container queries -->
-      <section class="gallery" aria-label="Galeria d'imatges">
-        <h2 class="gallery__title">Galeria</h2>
-        <div class="gallery__grid">
-          <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=600&q=80" alt="Taronjes de la Plana" />
-            <figcaption class="gallery__caption">Taronja i cítrics de la Plana.</figcaption>
-          </figure>
-          <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=600&q=80" alt="Paella a la llenya" />
-            <figcaption class="gallery__caption">Paella a la llenya durant el taller.</figcaption>
-          </figure>
-          <figure class="gallery__item">
-            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Cuina mediterrània" />
-            <figcaption class="gallery__caption">Producte fresc per a showcookings.</figcaption>
-          </figure>
-        </div>
-      </section>
-    </main>
 
+      <section class="gallery-card" aria-labelledby="gallery-title">
+        <div class="gallery-card__header">
+          <h2 class="gallery-card__title" id="gallery-title">Galeria de tastos</h2>
+          <p class="gallery-card__subtitle">Plats que representen les arrels i l'evolució de la cuina valenciana.</p>
+
+          </div>
+          <div class="gallery" data-gallery-container>
+            <figure class="gallery__item">
+              <img src="./assets/images/gallery/paella-valenciana.jpg" alt="Paella valenciana tradicional" />
+              <figcaption class="gallery__caption">Paella valenciana</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="./assets/images/gallery/arros-al-forn.jpg" alt="Cassola d'arròs al forn amb cigrons i botifarra" />
+              <figcaption class="gallery__caption">Arròs al forn</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="./assets/images/gallery/fideua-mar.jpg" alt="Fideuà marinera amb allioli suau" />
+              <figcaption class="gallery__caption">Fideuà marinera</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="./assets/images/gallery/dolcos-valencia.jpg" alt="Safata de dolços valencians amb taronja" />
+              <figcaption class="gallery__caption">Dolços de taronja</figcaption>
+            </figure>
+            <figure class="gallery__item">
+              <img src="./assets/images/gallery/suquet-peix.jpg" alt="Suquet de peix amb patata i cloïsses" />
+              <figcaption class="gallery__caption">Suquet de peix</figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </main>
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
-  </body>
-  
+  </body> 
 </html>

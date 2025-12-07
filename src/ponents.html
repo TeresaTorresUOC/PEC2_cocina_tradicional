@@ -12,36 +12,72 @@
     <main class="page page--speakers" data-container>
       <header class="page__hero" aria-labelledby="speakers-title">
         <p class="page__kicker">Programació · 23–25 gener</p>
-        <h1 class="page__title" id="speakers-title">Ponents convidats</h1>
-        <p class="page__lead">Veus que custodien la cuina tradicional i la porten a noves generacions.</p>
+        <h1 class="page__title" id="speakers-title">Ponents</h1>
+        <p class="page__lead">
+          Un recorregut per la cuina tradicional valenciana guiada per professionals que
+          estimen el producte i el territori.
+        </p>
       </header>
+      <section class="speakers" aria-labelledby="speakers-grid-title">
+        <header class="speakers__header">
+          <h2 class="speakers__title" id="speakers-grid-title">Coneix els ponents</h2>
+          <p class="speakers__subtitle">Sessions pràctiques, divulgació i degustacions guiades.</p>
+        </header>
 
-    
-      <section class="speaker-grid" aria-label="Llista de ponents">
-        <article class="speaker-card" aria-labelledby="ponent-joan">
-          <h2 class="speaker-card__name" id="ponent-joan">Joan Mataró</h2>
-          <p class="speaker-card__role">Cuina marinera · Cassola de peix i fumets mediterranis.</p>
-          <p class="speaker-card__detail">Showcooking sobre arrossos amb marisc de proximitat.</p>
-        </article>
-        <article class="speaker-card" aria-labelledby="ponent-amparo">
-          <h2 class="speaker-card__name" id="ponent-amparo">Amparo Sorolla</h2>
-          <p class="speaker-card__role">Rebosteria tradicional · Pastissets i coques de l'horta.</p>
-          <p class="speaker-card__detail">Taller de dolços amb taronja, ametlla i oli d'oliva verge extra.</p>
-        </article>
-        <article class="speaker-card" aria-labelledby="ponent-henar">
-          <h2 class="speaker-card__name" id="ponent-henar">Henar Llop</h2>
-          <p class="speaker-card__role">Arrossos a llenya · Paella i arròs al forn amb producte local.</p>
-          <p class="speaker-card__detail">Sessió sobre punts de cocció i varietats d'arròs valencià.</p>
-        </article>
-        <article class="speaker-card" aria-labelledby="ponent-sonia">
-          <h2 class="speaker-card__name" id="ponent-sonia">Sònia Garcia</h2>
-          <p class="speaker-card__role">Cuina de mercat · Verdures de temporada i receptes d'horta.</p>
-          <p class="speaker-card__detail">Degustació guiada de plats amb carxofa, tomata i herbes fresques.</p>
-        </article>
+        <div class="speakers__list">
+          <article class="speakers__item speaker-card" aria-labelledby="ponent-joan">
+            <figure class="speaker-card__media">
+              <img src="./assets/images/ponents/joan-mataro.jpg" alt="Joan Mataró preparant un arròs mariner" />
+            </figure>
+            <div class="speaker-card__body">
+              <h3 class="speaker-card__name" id="ponent-joan">Joan Mataró</h3>
+              <p class="speaker-card__role">Cuiner especialitzat en arròs a banda i suquets mariners.</p>
+              <p class="speaker-card__bio">Explica com aprofitar el peix de llotja i els fumets que donen ànima als arrossos.</p>
+              <a class="btn btn-outline-primary speaker-card__link" href="#">Veure sessió</a>
+            </div>
+          </article>
+
+          <article class="speakers__item speaker-card" aria-labelledby="ponent-amparo">
+            <figure class="speaker-card__media">
+              <img src="./assets/images/ponents/amparo-sorolla.jpg" alt="Amparo Sorolla servint una paella valenciana" />
+            </figure>
+            <div class="speaker-card__body">
+              <h3 class="speaker-card__name" id="ponent-amparo">Amparo Sorolla</h3>
+              <p class="speaker-card__role">Mestra arrossera, experta en paella valenciana tradicional.</p>
+              <p class="speaker-card__bio">Comparteix els punts de torrat, el sofregit exacte i la importància del garrofó autèntic.</p>
+              <a class="btn btn-outline-primary speaker-card__link" href="#">Veure bio</a>
+            </div>
+          </article>
+
+          <article class="speakers__item speaker-card" aria-labelledby="ponent-henar">
+            <figure class="speaker-card__media">
+              <img src="./assets/images/ponents/henar-llop.jpg" alt="Henar Llop consultant receptaris antics" />
+            </figure>
+            <div class="speaker-card__body">
+              <h3 class="speaker-card__name" id="ponent-henar">Henar Llop</h3>
+              <p class="speaker-card__role">Investigadora en patrimoni gastronòmic valencià.</p>
+              <p class="speaker-card__bio">Recupera receptes de pobles de la Plana i les contextualitza amb productors locals.</p>
+              <a class="btn btn-outline-primary speaker-card__link" href="#">Veure sessió</a>
+            </div>
+          </article>
+
+          <article class="speakers__item speaker-card" aria-labelledby="ponent-sonia">
+            <figure class="speaker-card__media">
+              <img src="./assets/images/ponents/sonia-garcia.jpg" alt="Sònia Garcia emplatant un suquet amb tocs creatius" />
+            </figure>
+            <div class="speaker-card__body">
+              <h3 class="speaker-card__name" id="ponent-sonia">Sònia Garcia</h3>
+              <p class="speaker-card__role">Xef creativa que fusiona cuina tradicional i tècniques modernes.</p>
+              <p class="speaker-card__bio">Aplica coccions a baixa temperatura i fons marins per donar nova vida a plats de l'horta.</p>
+              <a class="btn btn-outline-primary speaker-card__link" href="#">Veure bio</a>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
   </body>
+  
 </html>
