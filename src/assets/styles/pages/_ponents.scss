@@ -37,7 +37,6 @@
     color: color-mix(in srgb, vars.$body-color 76%, #475569 24%);
   }
 
-
   .speakers__list {
     display: flex;
     flex-wrap: wrap;
@@ -112,7 +111,6 @@
       flex-basis: calc((100% - 1rem) / 2);
     }
   
-
   @container speakers (min-width: 920px) {
     .speakers__item {
       flex-basis: calc((100% - 2rem) / 3);
@@ -144,6 +142,5 @@
   
     }
   }
-
-}
+ }
 }

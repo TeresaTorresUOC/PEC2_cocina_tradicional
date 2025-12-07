@@ -1,8 +1,6 @@
 // Settings and tools
 @use "abstracts/index" as *;
 
-// Declare cascade layer order
-@layer reset, base, layout, components, utilities, pages;
 
 // Vendors
 @use "vendors/fonts";
@@ -32,3 +30,7 @@
 @use "pages/ponents";
 @use "pages/article";
 @use "pages/extra";
+
+
+// Declare cascade layer order
+@layer reset, base, layout, components, utilities, pages;

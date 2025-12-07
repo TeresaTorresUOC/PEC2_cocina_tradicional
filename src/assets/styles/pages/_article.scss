@@ -16,6 +16,32 @@
     container-type: inline-size;
     container-name: article;
   }
+  .article__hero-media {
+    margin: 0;
+    position: relative;
+    border-radius: vars.$border-radius-lg;
+    overflow: hidden;
+    box-shadow: vars.$shadow-card;
+    aspect-ratio: 16 / 7;
+    background: #0f172a;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    figcaption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: clamp(0.85rem, 1vw, 1.2rem);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.75));
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+  }
 
   .article__header {
     display: grid;
@@ -95,12 +121,10 @@
     box-shadow: vars.$shadow-soft;
   }
 
-  
-
   .article__quote {
     margin: 0;
     padding: clamp(1rem, 1.2rem + 0.5vw, 1.4rem);
-    border-left: 4px solid vars.$primary;
+    border-left: 4px solid vars.$brand-primary;
     background: rgba(17, 24, 39, 0.04);
     border-radius: vars.$border-radius-lg;
     display: grid;
@@ -122,7 +146,7 @@
   }
 
   .article:has(blockquote) {
-    border-top: 2px solid color-mix(in srgb, vars.$primary 55%, #0f172a 45%);
+    border-top: 2px solid color-mix(in srgb, vars.$brand-primary 55%, #0f172a 45%);
     padding-top: 0.5rem;
   }
 

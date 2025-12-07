@@ -8,50 +8,70 @@
   </head>
   <body class="site" data-page="home">
     <include src="./views/header.html"></include>
-    <main class="page page--home" data-container>
-      <header class="hero" aria-labelledby="hero-title">
-        <p class="hero__kicker">Borriana (Castelló) · 23–25 gener 2026</p>
-        <h1 class="hero__title" id="hero-title">IV Jornades de Cuina Tradicional Valenciana</h1>
-        <p class="hero__lead">Tres dies per compartir receptes, producte i cultura gastronòmica mediterrània.</p>
     
-      </header>
-
-       <!-- Cartell en CSS Grid -->
-       <section class="poster-grid" aria-label="Cartell principal del festival">
-        <div class="poster-grid__highlight">
-          <p class="poster-grid__date">23 · 24 · 25</p>
-          <p class="poster-grid__month">Gener 2026</p>
-          <p class="poster-grid__city">Borriana (Castelló)</p>
-        </div>
-        <article class="poster-grid__card">
-          <h2 class="poster-grid__title">Cuina de l'horta i de la mar</h2>
-          <p>Showcookings, receptari valencià i tastos guiats amb producte de temporada.</p>
-
-        </article>
-        <article class="poster-grid__card">
-          <h2 class="poster-grid__title">Converses i memòria</h2>
-          <p>Taules rodones sobre arrossos, dolços tradicionals i cuina sostenible.</p>
-        </article>
-
-        <article class="poster-grid__card">
-          <h2 class="poster-grid__title">Ruta de mercats</h2>
-          <p>Visites a la llotja i als mercats locals per conéixer peix, cítrics i arrossos.</p>
-        </article>
-        <aside class="poster-grid__aside" aria-label="Informació ràpida">
-          <p class="poster-grid__badge">Inscripció oberta</p>
-          <a class="poster-grid__cta btn btn-primary" href="ponents.html">Descobreix el programa</a>
+    <main class="page page--home">
+      <section class="poster" aria-label="Cartell principal de les jornades">
+        <div class="poster__pattern" aria-hidden="true"></div>
+        <nav class="poster__nav" aria-label="Navegació destacada">
+          <div class="poster__brand">
+            <span class="poster__brand-icon" aria-hidden="true">🍋</span>
+            <span class="poster__brand-name">IV Jornades de Cuina Tradicional</span>
+          </div>
+          <ul class="poster__menu">
+            <li><a class="poster__menu-link" href="index.html">Inici</a></li>
+            <li><a class="poster__menu-link" href="ponents.html">Ponents</a></li>
+            <li><a class="poster__menu-link" href="article.html">Crònica</a></li>
+            <li><a class="poster__menu-link" href="extra.html">Contacte i galeria</a></li>
+          </ul>
+        </nav>
+        <header class="poster__hero" aria-labelledby="hero-title">
+          <p class="poster__eyebrow">Borriana (Castelló) · 23–25 gener 2026</p>
+          <h1 class="poster__title" id="hero-title">IV Jornades de Cuina Tradicional Valenciana</h1>
+          <p class="poster__subtitle">
+            Tres dies per posar en valor els sabors de l'horta i de la mar amb tallers, degustacions i converses.
+          </p>
+          <div class="poster__meta">
+            <span class="poster__tagline">Cuina de mercat · Producte local · Receptari mediterrani</span>
+            <a class="btn btn-primary poster__cta" href="ponents.html">Consulta el programa</a>
+          </div>
+        </header>
+        <aside class="poster__stamp" aria-label="Dades principals">
+          <p class="poster__stamp-date">23 · 24 · 25</p>
+          <p class="poster__stamp-location">Gener 2026 · Plaça Major</p>
+          <p class="poster__stamp-note">Inscripció oberta · Places limitades</p>
         </aside>
-      </section>
 
-      <section class="info" aria-label="Informació pràctica">
-        <div class="info__item">
-          <h2 class="info__title">Ubicació</h2>
-          <p>Espais gastronòmics al centre de Borriana i tastos a la Plaça Major.</p>
+        <div class="poster__cta-panel" aria-label="Accions destacades">
+          <p class="poster__cta-title">Gastronomia mediterrània</p>
+          <p class="poster__cta-copy">Tastos guiats, showcookings i maridatges amb producte de temporada.</p>
+          <a class="btn btn-light poster__cta-secondary" href="extra.html">Vull apuntar-m'hi</a>
         </div>
-        <div class="info__item">
-          <h2 class="info__title">Ponents convidats</h2>
-          <p>Quatre veus que cuiden el receptari valencià i innoven amb tècniques actuals.</p>
-        </div>
+        <section class="poster__grid" aria-label="Activitats principals">
+          <article class="poster-card">
+            <h2 class="poster-card__title">Cuina de l'horta i de la mar</h2>
+            <p class="poster-card__text">Recorregut pels arrossos, verdures i peixos de proximitat amb tastos a l'aire lliure.</p>
+            <ul class="poster-card__list">
+              <li>Showcookings amb producte del mercat</li>
+              <li>Tastos guiats amb maridatge cítric</li>
+              <li>Espais familiars per aprendre receptes</li>
+            </ul>
+          </article>
+          <article class="poster-card">
+            <h2 class="poster-card__title">Converses i memòria</h2>
+            <p class="poster-card__text">Taules rodones sobre receptari tradicional, sostenibilitat i innovació gastronòmica.</p>
+            <div class="poster-card__chips">
+              <span class="badge rounded-pill text-bg-warning">Patrimoni</span>
+              <span class="badge rounded-pill text-bg-light">Sostenibilitat</span>
+              <span class="badge rounded-pill text-bg-dark">Arrossos</span>
+            </div>
+          </article>
+          <article class="poster-card">
+            <h2 class="poster-card__title">Ruta de mercats</h2>
+            <p class="poster-card__text">Visites a la llotja i al mercat per conéixer peix, cítrics i productors locals.</p>
+            <p class="poster-card__quote">“Cuina que connecta terra i mar amb el ritme del mercat”. <cite>Equip de coordinació</cite></p>
+            <a class="btn btn-outline-primary poster-card__link" href="extra.html">Descobreix la ruta</a>
+          </article>
+        </section>
       </section>
     </main>
 

@@ -8,7 +8,7 @@
     background: radial-gradient(circle at 15% 20%, color-mix(in srgb, #fef6e4 80%, #ffe7c7 20%), transparent 45%),
       radial-gradient(circle at 85% 10%, color-mix(in srgb, #dbeafe 80%, #c4b5fd 20%), transparent 40%),
       color-mix(in lch, lch(95% 10 85) 70%, lch(88% 25 40) 30%);
-    color: vars.$text-color;
+      color: vars.$body-color;
   }
 
   .page--extra .page__title {
@@ -208,5 +208,5 @@
       transform: scale(1.02);
     }
   }
-  
+
 }

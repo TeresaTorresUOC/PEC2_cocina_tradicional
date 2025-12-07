@@ -89,11 +89,13 @@
     justify-content: space-between;
     gap: 0.5rem;
     padding: 0.45rem 0.75rem;
-    border-radius: vars.$border-radius;
+    border-radius: vars.$border-radius-md;
     color: inherit;
     font-weight: 600;
     background: rgba(255, 255, 255, 0.06);
     transition: transform 150ms ease, background-color 150ms ease;
+
+ 
 
     &:hover,
     &:focus-visible {
@@ -119,7 +121,6 @@
     color: color-mix(in srgb, #e2e8f0 85%, #7dd3fc 15%);
   }
 
-
   .poster__title {
     margin: 0;
     font-size: clamp(2.4rem, 5vw, 3.6rem);
@@ -144,7 +145,7 @@
     margin: 0;
     padding: 0.75rem 1rem;
     background: rgba(255, 255, 255, 0.06);
-    border-radius: vars.$border-radius;
+    border-radius: vars.$border-radius-md;
     font-weight: 600;
   }
 
@@ -252,14 +253,14 @@
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-
   .poster-card__quote {
     margin: 0;
     padding: 0.75rem 1rem;
-    border-left: 4px solid vars.$color-primary;
+    border-left: 4px solid vars.$brand-primary;
     background: rgba(241, 245, 249, 0.9);
-    border-radius: vars.$border-radius;
+    border-radius: vars.$border-radius-md;
   }
+
 
   .poster-card__quote cite {
     display: block;

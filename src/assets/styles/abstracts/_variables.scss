@@ -10,21 +10,21 @@ $font-family-serif: "Cormorant Garamond", "Georgia", serif;
 $neutral-50: #f9fafb;
 $neutral-700: #1f2937;
 $neutral-900: #0b1021;
-$coral: #ff6f61;
-$emerald: #4bd6b3;
-$amber: #ffb347;
-$ink: #111827;
-$accent: color.mix($coral, $amber, 55%);
+$coral: #f2c94c; 
+$emerald: #0f1b3d; 
+$amber: #ffd166;
+$ink: #0b1021;
+$accent: color.mix($coral, $emerald, 45%);
 
 // Branding (se reutiliza en Bootstrap y en componentes propios)
-$brand-primary: $coral;
-$brand-secondary: $emerald;
-$brand-contrast: $ink;
+$brand-primary: $emerald;
+$brand-secondary: $coral;
+$brand-contrast: #ffffff;
 
 // Surfaces
-$body-bg: color.mix(#f7f1e3, #ffffff, 60%);
+$body-bg: color.mix(#fdfaf2, #e7ecff, 65%);
 $body-color: $neutral-900;
-$gradient-primary: linear-gradient(120deg, $coral, $accent, $emerald);
+$gradient-primary: linear-gradient(120deg, $emerald, $accent, $coral);
 $shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.08);
 $shadow-card: 0 15px 35px rgba(0, 0, 0, 0.09);
 
