@@ -16,6 +16,54 @@
         <p class="page__lead">Resol dubtes, inscriu-te a les jornades i inspira't amb els plats que degustarem.</p>
       </header>
 
+      <section class="registration" aria-labelledby="inscripcio-title">
+        <div class="registration__panel">
+          <p class="registration__eyebrow">Formulari d'inscripció</p>
+          <h2 class="registration__title" id="inscripcio-title">Reserva la teua plaça</h2>
+          <p class="registration__lead">Indica les teues dades i el torn preferit; rebràs un correu de confirmació amb el programa complet.</p>
+
+          <form
+            class="registration__form needs-validation"
+            name="inscripcio-jornades"
+            method="post"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="inscripcio-jornades" />
+            <p class="visually-hidden">
+              <label>Si ets humà, deixa aquest camp buit <input name="bot-field" /></label>
+            </p>
+            <div class="registration__grid">
+              <label class="form-label" for="registre-nom">Nom i cognoms</label>
+              <input class="form-control" type="text" id="registre-nom" name="nom" placeholder="Nom complet" required />
+
+              <label class="form-label" for="registre-email">Correu electrònic</label>
+              <input class="form-control" type="email" id="registre-email" name="email" placeholder="nom@exemple.com" required />
+
+              <label class="form-label" for="registre-telefon">Telèfon de contacte</label>
+              <input class="form-control" type="tel" id="registre-telefon" name="telefon" placeholder="600 000 000" />
+
+              <label class="form-label" for="registre-modalitat">Modalitat</label>
+              <select class="form-select" id="registre-modalitat" name="modalitat" required>
+                <option value="">Tria una opció</option>
+                <option>Pack complet 3 dies</option>
+                <option>Dissabte + diumenge</option>
+                <option>Tastos vesprada</option>
+              </select>
+
+              <label class="form-label" for="registre-comentaris">Comentaris o al·lèrgies</label>
+              <textarea class="form-control" id="registre-comentaris" name="comentaris" rows="3" placeholder="Escriu qualsevol detall rellevant"></textarea>
+
+              <div class="form-check registration__accept">
+                <input class="form-check-input" type="checkbox" id="registre-politica" name="politica" required />
+                <label class="form-check-label" for="registre-politica">Accepto la política de dades de les jornades</label>
+              </div>
+            </div>
+            <button class="btn btn-primary registration__submit" type="submit">Confirmar inscripció</button>
+          </form>
+        </div>
+      </section>
+
       <div class="extra-panels">
         <section class="contact-card" aria-labelledby="form-title">
           <div class="contact-card__header">
