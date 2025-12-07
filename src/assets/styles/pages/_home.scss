@@ -30,7 +30,7 @@
     position: absolute;
     inset: 0;
     background-image: linear-gradient(120deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.35)),
-      url("../images/port-borriana.webp");
+    url("../images/culleres.png");
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -166,6 +166,7 @@
     display: grid;
     gap: 0.6rem;
     align-content: center;
+    align-items: center;
     padding: clamp(1.25rem, 2vw, 1.6rem);
     background: linear-gradient(140deg, rgba(255, 214, 102, 0.95), rgba(255, 148, 102, 0.9));
     border-radius: vars.$border-radius-lg;
