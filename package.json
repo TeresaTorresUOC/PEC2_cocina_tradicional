@@ -9,8 +9,9 @@
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
     "build": "npm-run-all clean parcel:build",
-    "test": "echo 'Everything is working as expected ✅\nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
-    "lint:styles": "stylelint \"src/**/*.{scss,css}\""
+    "test": "echo 'Everything is working as expected \nStart working on your project by running \\033[1mnpm run dev\\033[0m'",
+    "lint:css": "stylelint \"src/**/*.{scss,css}\"",
+    "lint:styles": "npm run lint:css"
   },
   "targets": {
     "web": {
