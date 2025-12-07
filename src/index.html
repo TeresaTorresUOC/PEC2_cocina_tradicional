@@ -1,91 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" /><!-- do not remove this line! -->
-    <title>Jornadas de Cocina Tradicional - Cartel</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <title>Inici · IV Jornades de Cuina Tradicional Valenciana</title>
   </head>
   <body class="site" data-page="home">
     <include src="./views/header.html"></include>
-
-    <main class="poster" data-container>
-      <div class="poster__pattern" aria-hidden="true"></div>
-
-      <nav class="poster__nav" aria-label="Navegación del cartel">
-        <div class="poster__brand">
-          <span class="poster__brand-icon" aria-hidden="true">🍲</span>
-          <span class="poster__brand-name">Jornadas · Cocina Tradicional</span>
-        </div>
-        <ul class="poster__menu">
-          <li class="poster__menu-item"><a class="poster__menu-link" href="index.html">Cartel</a></li>
-          <li class="poster__menu-item"><a class="poster__menu-link" href="ponentes.html">Ponentes</a></li>
-          <li class="poster__menu-item"><a class="poster__menu-link" href="articulo.html">Artículo</a></li>
-          <li class="poster__menu-item"><a class="poster__menu-link" href="extra.html">Extra</a></li>
-        </ul>
-      </nav>
-
-      <header class="poster__hero">
-        <p class="poster__eyebrow">UOC · Jornadas 2025</p>
-        <h1 class="poster__title">Cocina Tradicional que Inspira</h1>
-        <p class="poster__subtitle">Cuatro días de recetas, historias y sabores que conectan generaciones.</p>
-        <div class="poster__meta">
-          <span class="poster__badge badge">12-15 de julio · Barcelona</span>
-          <span class="poster__badge badge badge--ghost">Acceso híbrido</span>
-        </div>
-        <p class="poster__tagline">Recetas, relatos y técnicas que conectan mares y montañas.</p>
-        <a class="poster__cta btn btn-primary" href="ponentes.html">Conoce el programa</a>
+    <main class="page page--home" data-container>
+      <header class="hero" aria-labelledby="hero-title">
+        <p class="hero__kicker">Borriana (Castelló) · 23–25 gener 2026</p>
+        <h1 class="hero__title" id="hero-title">IV Jornades de Cuina Tradicional Valenciana</h1>
+        <p class="hero__lead">Tres dies per compartir receptes, producte i cultura gastronòmica mediterrània.</p>
+    
       </header>
 
-      <aside class="poster__stamp" aria-label="Datos clave del evento">
-        <p class="poster__stamp-date">12 · 15 JUL</p>
-        <p class="poster__stamp-location">Barcelona &amp; online</p>
-        <p class="poster__stamp-note">Gastronomía viva</p>
-      </aside>
+       <!-- Cartell en CSS Grid -->
+       <section class="poster-grid" aria-label="Cartell principal del festival">
+        <div class="poster-grid__highlight">
+          <p class="poster-grid__date">23 · 24 · 25</p>
+          <p class="poster-grid__month">Gener 2026</p>
+          <p class="poster-grid__city">Borriana (Castelló)</p>
+        </div>
+        <article class="poster-grid__card">
+          <h2 class="poster-grid__title">Cuina de l'horta i de la mar</h2>
+          <p>Showcookings, receptari valencià i tastos guiats amb producte de temporada.</p>
 
-      <section class="poster__cta-panel" aria-label="Reserva tu plaza">
-        <p class="poster__cta-title">Plazas limitadas</p>
-        <p class="poster__cta-copy">Experiencias en grupos reducidos, showcookings y degustaciones al atardecer.</p>
-        <a class="poster__cta-secondary btn btn-outline" href="articulo.html">Lee la crónica previa</a>
+        </article>
+        <article class="poster-grid__card">
+          <h2 class="poster-grid__title">Converses i memòria</h2>
+          <p>Taules rodones sobre arrossos, dolços tradicionals i cuina sostenible.</p>
+        </article>
+
+        <article class="poster-grid__card">
+          <h2 class="poster-grid__title">Ruta de mercats</h2>
+          <p>Visites a la llotja i als mercats locals per conéixer peix, cítrics i arrossos.</p>
+        </article>
+        <aside class="poster-grid__aside" aria-label="Informació ràpida">
+          <p class="poster-grid__badge">Inscripció oberta</p>
+          <a class="poster-grid__cta btn btn-primary" href="ponents.html">Descobreix el programa</a>
+        </aside>
       </section>
 
-      <section class="poster__grid" aria-label="Destacados del programa">
-        <article class="poster-card">
-          <h2 class="poster-card__title">Rutas de Sabores</h2>
-          <p class="poster-card__text">Itinerarios urbanos guiados para descubrir mercados, obradores y cocinas de barrio.</p>
-          <ul class="poster-card__list">
-            <li>Mercados de la Boqueria y Santa Caterina</li>
-            <li>Tapas de autor en Gràcia</li>
-            <li>Repostería conventual</li>
-          </ul>
-        </article>
-        <article class="poster-card">
-          <h2 class="poster-card__title">Talleres en Vivo</h2>
-          <p class="poster-card__text">Clases prácticas con expertas en cocina mediterránea, andina y asiática.</p>
-          <div class="poster-card__chips">
-            <span class="chip">Pasta fresca</span>
-            <span class="chip">Fermentos</span>
-            <span class="chip">Caldos claros</span>
-            <span class="chip">Dumplings</span>
-          </div>
-        </article>
-        <article class="poster-card">
-          <h2 class="poster-card__title">Conversaciones</h2>
-          <p class="poster-card__text">Diálogos sobre sostenibilidad, productos de temporada y memoria gastronómica.</p>
-          <blockquote class="poster-card__quote">
-            <p>“El recetario es un mapa de afectos”.</p>
-            <cite>— Clara Montseny</cite>
-          </blockquote>
-        </article>
-        <article class="poster-card">
-          <h2 class="poster-card__title">Expo Sensorial</h2>
-          <p class="poster-card__text">Instalación interactiva sobre aromas, texturas y colores de la cocina tradicional.</p>
-          <a class="poster-card__link btn btn-outline" href="articulo.html">Lee la historia</a>
-        </article>
+      <section class="info" aria-label="Informació pràctica">
+        <div class="info__item">
+          <h2 class="info__title">Ubicació</h2>
+          <p>Espais gastronòmics al centre de Borriana i tastos a la Plaça Major.</p>
+        </div>
+        <div class="info__item">
+          <h2 class="info__title">Ponents convidats</h2>
+          <p>Quatre veus que cuiden el receptari valencià i innoven amb tècniques actuals.</p>
+        </div>
       </section>
     </main>
 
-  
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
+    </body>
 </html>

@@ -1,23 +1,30 @@
-<header class="site-header" data-nav-container>
-  <div class="site-header__bar navbar navbar-expand-lg">
-    <div class="site-header__brand">
-      <a class="site-header__logo navbar-brand" href="index.html" aria-label="Inicio Jornadas de Cocina Tradicional">
-        <span class="site-header__icon" aria-hidden="true">🍲</span>
-        <span class="site-header__title">Cocina Tradicional</span>
-      </a>
-      <button class="site-header__toggle navbar-toggler" type="button" aria-expanded="false" aria-controls="main-menu">
-        <span class="navbar-toggler-icon"></span>
-        <span class="site-header__toggle-label">Menú</span>
-      </button>
-    </div>
-  
-    <nav class="site-header__nav collapse navbar-collapse" id="main-menu" aria-label="Navegación principal">
-      <ul class="site-header__menu navbar-nav ms-auto">
-        <li class="site-header__item nav-item"><a class="site-header__link nav-link" href="index.html">Cartel</a></li>
-        <li class="site-header__item nav-item"><a class="site-header__link nav-link" href="ponentes.html">Ponentes</a></li>
-        <li class="site-header__item nav-item"><a class="site-header__link nav-link" href="articulo.html">Artículo</a></li>
-        <li class="site-header__item nav-item"><a class="site-header__link nav-link" href="extra.html">Extra</a></li>
+<header class="site-header navbar navbar-expand-lg" data-nav-container>
+  <div class="container-fluid site-header__inner">
+    <a class="navbar-brand site-header__logo" href="index.html" aria-label="Inici · IV Jornades de Cuina Tradicional Valenciana">
+      <span class="site-header__logo-mark" aria-hidden="true">🍊</span>
+      <span class="site-header__logo-text">IV Jornades de Cuina Tradicional Valenciana</span>
+    </a>
+
+    <button
+      class="navbar-toggler site-header__toggle"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#main-menu"
+      aria-controls="main-menu"
+      aria-expanded="false"
+      aria-label="Obrir o tancar el menú principal"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <nav class="collapse navbar-collapse site-header__nav" id="main-menu" aria-label="Navegació principal">
+      <ul class="navbar-nav ms-auto site-nav">
+        <li class="nav-item site-nav__item"><a class="nav-link site-nav__link" href="index.html">Inici</a></li>
+        <li class="nav-item site-nav__item"><a class="nav-link site-nav__link" href="ponents.html">Ponents</a></li>
+        <li class="nav-item site-nav__item"><a class="nav-link site-nav__link" href="article.html">Article</a></li>
+        <li class="nav-item site-nav__item"><a class="nav-link site-nav__link" href="extra.html">Contacte i galeria</a></li>
       </ul>
     </nav>
   </div>
+  
 </header>

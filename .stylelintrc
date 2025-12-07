@@ -14,31 +14,33 @@
       ],
       "utilitySelectors": "^\\.u-[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
+    "selector-class-pattern": [
+      "^[a-z0-9]+(?:-[a-z0-9]+)*(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--?[a-z0-9]+(?:-[a-z0-9]+)*)?$|^u-[a-z0-9]+(?:-[a-z0-9]+)*$",
+      {
+        "message": "Les classes han de seguir BEM (bloc__element--modificador o utilitat u-*)"
+      }
+    ],
     "selector-pseudo-class-no-unknown": [true, {
       "ignorePseudoClasses": ["global", "export", "local"]
     }],
     "selector-pseudo-element-no-unknown": [true, {
       "ignorePseudoElements": ["file-selector-button"]
     }],
-    "selector-class-pattern": [
-      "^[a-z0-9]+(?:-[a-z0-9]+)*(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--?[a-z0-9]+(?:-[a-z0-9]+)*)?$|^u-[a-z0-9]+(?:-[a-z0-9]+)*$",
-      {
-        "message": "Las clases deben seguir el patrón BEM (bloque__elemento--modificador)"
-      }
-    ],
-       "order/order": null,
-       "alpha-value-notation": null,
-       "color-function-notation": null,
-       "color-hex-length": null,
-       "declaration-block-no-redundant-longhand-properties": null,
-       "declaration-empty-line-before": null,
-       "hue-degree-notation": null,
-       "import-notation": null,
-       "no-descending-specificity": null,
-       "at-rule-empty-line-before": null,
-       "rule-empty-line-before": null,
-       "shorthand-property-no-redundant-values": null,
-       "scss/dollar-variable-empty-line-before": null
+    "order/order": null,
+    "order/properties-order": [],
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "color-hex-length": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-empty-line-before": null,
+    "hue-degree-notation": null,
+    "import-notation": null,
+    "no-descending-specificity": null,
+    "at-rule-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "shorthand-property-no-redundant-values": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/double-slash-comment-empty-line-before": null
   }
-  
+
 }

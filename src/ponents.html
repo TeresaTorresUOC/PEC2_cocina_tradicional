@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <title>Ponents · IV Jornades de Cuina Tradicional Valenciana</title>
+  </head>
+  <body class="site" data-page="speakers">
+    <include src="./views/header.html"></include>
+
+    <main class="page page--speakers" data-container>
+      <header class="page__hero" aria-labelledby="speakers-title">
+        <p class="page__kicker">Programació · 23–25 gener</p>
+        <h1 class="page__title" id="speakers-title">Ponents convidats</h1>
+        <p class="page__lead">Veus que custodien la cuina tradicional i la porten a noves generacions.</p>
+      </header>
+
+    
+      <section class="speaker-grid" aria-label="Llista de ponents">
+        <article class="speaker-card" aria-labelledby="ponent-joan">
+          <h2 class="speaker-card__name" id="ponent-joan">Joan Mataró</h2>
+          <p class="speaker-card__role">Cuina marinera · Cassola de peix i fumets mediterranis.</p>
+          <p class="speaker-card__detail">Showcooking sobre arrossos amb marisc de proximitat.</p>
+        </article>
+        <article class="speaker-card" aria-labelledby="ponent-amparo">
+          <h2 class="speaker-card__name" id="ponent-amparo">Amparo Sorolla</h2>
+          <p class="speaker-card__role">Rebosteria tradicional · Pastissets i coques de l'horta.</p>
+          <p class="speaker-card__detail">Taller de dolços amb taronja, ametlla i oli d'oliva verge extra.</p>
+        </article>
+        <article class="speaker-card" aria-labelledby="ponent-henar">
+          <h2 class="speaker-card__name" id="ponent-henar">Henar Llop</h2>
+          <p class="speaker-card__role">Arrossos a llenya · Paella i arròs al forn amb producte local.</p>
+          <p class="speaker-card__detail">Sessió sobre punts de cocció i varietats d'arròs valencià.</p>
+        </article>
+        <article class="speaker-card" aria-labelledby="ponent-sonia">
+          <h2 class="speaker-card__name" id="ponent-sonia">Sònia Garcia</h2>
+          <p class="speaker-card__role">Cuina de mercat · Verdures de temporada i receptes d'horta.</p>
+          <p class="speaker-card__detail">Degustació guiada de plats amb carxofa, tomata i herbes fresques.</p>
+        </article>
+      </section>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>

@@ -1,67 +1,46 @@
-# UOC Boilerplate
+cs/documentacion_practica.md
+Nou
++41
+-0
 
-UOC Boilerplate is a starter template for the HTML and CSS Tools courses from the [Master's Program in Multimedia Applications](https://estudis.uoc.edu/ca/masters-universitaris/aplicacions-multimedia/presentacio) and the [Master's Program in Web App and Website Development](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) at the [Universitat Oberta de Catalunya](https://www.uoc.edu). It aims to provide a basic, modern frontend web development starter pack based on Parcel and including a Sass compiler, an ES6 transpiler, minifiers, an image transformer, and development tools.
+# Documentación de la práctica
 
-This is the 3.x version of UOC Boilerplate, available since the UOC 2020-2 semester.
+## 1. Introducción
+Este proyecto implementa un sitio web para unas jornadas de cocina tradicional dentro de la PEC de Herramientas Avanzadas de HTML y CSS. Partiendo del UOC Boilerplate se han construido varias páginas (portada, ponentes, artículo y extras) con una estética inspirada en carteles gastronómicos y un diseño centrado en la divulgación de los talleres y chefs invitados.
 
-## Requirements
+## 2. Proceso de desarrollo
+1. **Clonado del boilerplate**: se partió del repositorio `uoc-boilerplate` y se preparó el árbol de SCSS organizado por capas.
+2. **Instalación de dependencias**: `npm install` para obtener Parcel, Stylelint, Bootstrap, Font Awesome y el resto de paquetes definidos en `package.json`.
+3. **Arranque en desarrollo**: `npm run dev` ejecuta la limpieza previa y levanta Parcel en el puerto 8123 con recarga automática.
+4. **Revisión de estilos**: `npm run lint:styles` aplica las reglas de Stylelint/BEM sobre todos los ficheros SCSS.
+5. **Compilación de producción**: `npm run build` genera el bundle optimizado en `dist/` sin mapas de código.
+6. **Publicación**: el resultado se sube a GitHub y se conecta con Netlify para desplegar automáticamente la carpeta generada.
 
-[Node.js](http://nodejs.org/) >= 18.x
+## 3. Metodología y guía de estilo
+Se ha combinado **ITCSS** para ordenar los estilos en capas (`abstracts`, `base`, `layout`, `components`, `utilities`, `pages`) y **BEM** para nombrar bloques y elementos. Esta organización evita fugas de especificidad y facilita escalar componentes. Las capas se declaran explícitamente mediante `@layer` al inicio del SCSS principal para controlar la cascada y poder aplicar prioridades conocidas.
 
-## Getting started
+La calidad de código se refuerza con **Stylelint** configurado con `stylelint-config-standard-scss`, el plugin de orden y el validador de patrones BEM. Se permiten las pseudo-clases modernas empleadas en el proyecto y se desactivan reglas no adaptadas a las utilidades internas.
 
-Clone this repository with `git clone`, or download a .zip file using the top right green button.
+## 4. Dependencias
+- **Bootstrap 5**: se importa vía Sass y se reconfigura con variables propias (colores corporativos, tipografías, radios, paddings de botones, tarjetas y formularios) para mantener coherencia visual con el resto de estilos personalizados.
+- **Font Awesome**: aporta iconografía ligera para reforzar elementos de navegación y llamadas a la acción.
+- **Stylelint y plugins**: usados en desarrollo para asegurar convenciones BEM/ITCSS y ordenación de declaraciones.
+- **Parcel** y utilidades asociadas (Autoprefixer, PostCSS Preset Env, Sharp) gestionan el bundling, autoprefijos y optimización de assets.
 
-Using the Terminal, navigate to the project folder and run `npm install`.
+## 5. Decisiones de diseño y desarrollo
+- **Enfoque mobile-first**: las rejillas y flexboxes parten de una sola columna y progresivamente se adaptan mediante consultas de contenedor, lo que simplifica la adaptación de los wireframes a cualquier ancho.
+- **Paleta y tipografías**: se definen variables Sass para neutros cálidos, acentos coral/ámbar/esmeralda y tipografías *Space Grotesk*/*Cormorant* que evocan cartelería gastronómica.
+- **Texturas y sombras suaves**: los fondos combinan degradados y patrones semitransparentes, con radios generosos para transmitir cercanía.
 
-## Features
+## 6. Requisitos técnicos específicos
+- **CSS Grid en la portada con fallback**: la sección `.poster` usa una retícula de 12 columnas y define `@supports not (display: grid)` para degradar a flexbox en navegadores sin soporte.
+- **Flexbox en ponentes**: la parrilla `.speakers__grid` y las tarjetas `.speaker-card` se maquetan con flexbox para acomodar filas y reorganizar el contenido horizontal en contenedores amplios.
+- **Pseudoclases `:has()` y `:is()`/`:where()`**: se emplean para estados de formularios y cuerpo del artículo, reduciendo especificidad y mejorando la semántica de selectores.
+- **Container queries**: páginas y componentes definen `container-name` y adaptan proporciones o disposición (`@container ...`) según el ancho real de cada bloque, no solo del viewport.
+- **Capas de cascada**: las capas `reset`, `base`, `layout`, `components`, `utilities` y `pages` se declaran en el SCSS principal para garantizar un orden estable de estilos.
+- **Sass avanzado**: uso de variables, funciones (`rem`), mixins de contenedor y utilidades de superficie, así como parciales organizados por responsabilidad.
+- **Bootstrap personalizado**: se reexpone el SCSS de Bootstrap mediante `@forward` aplicando las variables del proyecto para colores, tipografías y radios, unificando el sistema de diseño.
 
-- Uses [Parcel v2](https://parceljs.org) module bundler.
-- NPM scripts for fast development and production build (see Commands below).
-
-### Stylesheets
-
-- [Sass/SCSS](https://sass-lang.com) to CSS compilation (`@parcel/transformer-sass`).
-- Transpilation of modern CSS synthax to support older bvrowsers, based on `browserslist`, including vendor prefixing and synthax lowering, with [PostCSS](https://postcss.org/) (`@parcel/transformer-postcss`).
-- Minification and optimization of CSS files on production builds with [`lightningcss`](https://github.com/parcel-bundler/lightningcss) (`@parcel/optimizer-css`).
-
-### HTML
-
-- Minification and optimization of CSS files on production builds [`htmlnano`](https://github.com/posthtml/htmlnano) (`@parcel/optimizer-htmlnano`).
-- [PostHTML](https://github.com/posthtml/posthtml) (`@parcel/transformer-posthtml`) features:
-  - Include partial HTML files with [`posthtml-include`](https://github.com/posthtml/posthtml-include).
-
-### Scripts
-
-- Transpilation of modern JavaScript synthax to support older browsers, based on `browserslist`, with with [Babel](https://babeljs.io/) (`@parcel/transformer-babel`).
-- Minification and optimization of JS code with [SWC](https://swc.rs/) (`@parcel/optimizer-swc`).
-
-### Images
-
-- Image transformation with [`sharp`](https://sharp.pixelplumbing.com/) ([`@parcel/transformer-image`](https://parceljs.org/recipes/image/)).
-
-### Development
-
-- Development server launch and live reloading on file changes.
-- Friendly error reporting.
-
-## How to use this boilerplate
-
-Content lives inside the `src/` folder. If you do not want to change the configuration or are unsure about what you are doing, do not edit files outside the `src/` folder.
-
-Always run the following commands during the development stage and for production builds. Please note that it is expected that all projects built with this boilerplate are compiled using `npm run build` before they are published.
-
-### Commands
-
-| Command         | Description                                                                                                                                                                                                                                                                                                                                                         |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run dev`   | Runs a local web server for development and opens the browser to display it. Automatically compiles styles and scripts whenever a file in `src/` is changed, and live reloads the browser. This is what _must be run_ on the development stage.                                                                                                                     |
-| `npm run build` | Compiles and minifies and optimizes the files in the assets folder. The generated compiled and optimized files are located in the `dist/` folder. This is what _must be run_ before publishing the project. This is also the build command to be run by external deployment services such as Netlify. The publishable files are then located in the `dist/` folder. |
-| `npm run clean` | Deletes the current `/dist` folder and cache folders.                                                                                                                                                                                                                                                                                                               |
-| `npm run test`  | Displays a success message if everything is working as expected.                                                                                                                                                                                                                                                                                                    |
-
-## Need help? / Want to help out?
-
-Feel free to create a [new issue](https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues/new/) or drop me a line at jorditarrida@uoc.edu.
-
-Are you using this Boilerplate for your projects or for educational purposes? I would love to hear about it!
+## 7. Enlaces finales
+- **Repositorio en GitHub**: <https://github.com/usuario/pec-cocina-tradicional>
+- **Despliegue en Netlify**: <https://cocina-tradicional.netlify.app/>

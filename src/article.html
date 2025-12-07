@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" /><!-- do not remove this line! -->
+    <title>Article · IV Jornades de Cuina Tradicional Valenciana</title>
+  </head>
+  <body class="site" data-page="article">
+    <include src="./views/header.html"></include>
+
+    <main class="page page--article" data-container>
+      <article class="news" aria-labelledby="news-title">
+        <header class="news__header">
+          <p class="news__kicker">Notícia</p>
+          <h1 class="news__title" id="news-title">Borriana acull les IV Jornades de Cuina Tradicional Valenciana</h1>
+          <p class="news__meta">23–25 de gener de 2026 · Plaça Major i espais gastronòmics de Borriana</p>
+        </header>
+
+        <section class="news__section">
+          <h2 class="news__subtitle">Producte de proximitat i cuina oberta</h2>
+          <p>Les jornades proposen showcookings, degustacions i xarrades on l'horta, el peix de llotja i els arrossos valencians són protagonistes.</p>
+        </section>
+
+        <section class="news__section">
+          <h2 class="news__subtitle">Programa resum</h2>
+          <ul class="news__list">
+            <li>Divendres 23: obertura i ruta pel mercat central.</li>
+            <li>Dissabte 24: demostracions d'arrossos, dolços i cuina marinera.</li>
+            <li>Diumenge 25: taules rodones i tastos de producte local.</li>
+          </ul>
+        </section>
+
+        <!-- Container queries aplicades a l'article -->
+        <section class="news__section news__section--quote" aria-label="Cita destacada">
+          <blockquote class="news__quote">
+            “Cuinar és preservar la memòria de la gent que ens va ensenyar a compartir taula.”
+          </blockquote>
+        </section>
+      </article>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>
