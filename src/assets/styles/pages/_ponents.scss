@@ -44,14 +44,15 @@
     flex-wrap: wrap;
     gap: clamp(1.1rem, 2vw, 1.75rem);
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     max-width: min(72rem, 100%);
     margin-inline: auto;
   }
 
   .speakers__item {
-    flex: 1 1 240px;
-    max-width: 26rem;
+    --card-size: clamp(15rem, 26vw, 19rem);
+    flex: 1 1 var(--card-size);
+    max-width: 24rem;
     display: flex;
     justify-content: center;
   }
@@ -63,12 +64,14 @@
     gap: clamp(0.85rem, 1.5vw, 1.15rem);
     align-items: center;
     text-align: center;
-    height: 100%;
+    inline-size: 100%;
+    aspect-ratio: 1 / 1;
     padding: clamp(1.1rem, 2vw, 1.6rem);
     border-radius: clamp(1.5rem, 2vw, 2.25rem);
     border: 1px solid color-mix(in srgb, #cbd5e1 35%, #e2e8f0 65%);
     background: color-mix(in srgb, #fff 90%, #f8fafc 10%);
     transition: transform 180ms ease, box-shadow 180ms ease;
+    justify-content: space-between;
 
     &:hover,
     &:focus-within {
@@ -127,6 +130,7 @@
       flex-basis: 260px;
       max-width: 24rem;
   }
+}
 
   @container speakers (min-width: 980px) {
     .speakers__list {
@@ -146,5 +150,5 @@
       filter: saturate(1.05);
     }
   }
- }
+ 
 }
