@@ -184,35 +184,39 @@
 
   .gallery-card {
     background: color-mix(in srgb, #0f172a 12%, #fff 88%);
+    width: min(100%, 78rem);
+    margin: 0 auto;
+    min-height: 50lvh;
   }
 
   .gallery-card__header {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    margin-bottom: 0.75rem;
+    margin: 0 auto 0.75rem;
+    max-width: 40rem;
   }
 
   .gallery {
-    --gallery-card-size: clamp(14rem, 24vw, 19rem);
+    --gallery-card-min: clamp(15rem, 24vw, 21rem);
 
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(0.75rem, 1.5vw, 1rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--gallery-card-min), 1fr));
+    gap: clamp(0.85rem, 1.6vw, 1.25rem);
     justify-content: center;
     align-items: stretch;
+    width: min(100%, 72rem);
+    margin: 0 auto;
     container-type: inline-size;
     container-name: gallery-grid;
-    --gallery-card-size: clamp(14rem, 24vw, 19rem);
   }
 
   .gallery__item {
     position: relative;
-    flex: 1 1 var(--gallery-card-size);
-    max-width: var(--gallery-card-size);
+    width: 100%;
     border-radius: vars.$border-radius-md;
     overflow: hidden;
-    aspect-ratio: 1;
+    aspect-ratio: 4 / 3;
     background: #e2e8f0;
     transform: translateZ(0);
   }
@@ -276,33 +280,33 @@
     }
 
     .gallery-card {
-      min-height: 45lvh;
+      min-height: 55lvh;
       align-self: stretch;
+      grid-column: 1 / -1;
     }
   }
 
   @container gallery-grid (max-width: 420px) {
     .gallery {
-      --gallery-card-size: 100%;
+      grid-template-columns: 1fr;
     }
   }
 
   @container gallery-grid (min-width: 32rem) {
-    .gallery__item {
-      flex-basis: min(50%, var(--gallery-card-size));
-      max-width: min(50%, var(--gallery-card-size));
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 
     }
   }
 
   @container gallery-grid (min-width: 56rem) {
-    .gallery__item {
-      flex-basis: min(33.33%, var(--gallery-card-size));
-      max-width: min(33.33%, var(--gallery-card-size));
+    .gallery {
+      width: min(100%, 78rem);
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     }
 
-    .gallery__item:nth-child(odd) img {
-      transform: scale(1.02);
+    .gallery__item {
+      aspect-ratio: 3 / 2;
     }
   }
 
