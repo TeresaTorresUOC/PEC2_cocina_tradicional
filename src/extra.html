@@ -16,13 +16,43 @@
         <p class="page__lead">Resol dubtes, inscriu-te a les jornades i inspira't amb els plats que degustarem.</p>
       </header>
 
-      <section class="registration" aria-labelledby="inscripcio-title" id="formulari-extra">
-        <div class="registration__panel">
-          <p class="registration__eyebrow">Formulari d'inscripció</p>
-          <h2 class="registration__title" id="inscripcio-title">Reserva la teua plaça</h2>
-          <p class="registration__lead">Indica les teues dades i el torn preferit; rebràs un correu de confirmació amb el programa complet.</p>
+      <section class="gallery-card" aria-labelledby="gallery-title">
+        <div class="gallery-card__header">
+          <h2 class="gallery-card__title" id="gallery-title">Galeria de tastos</h2>
+          <p class="gallery-card__subtitle">Plats que representen les arrels i l'evolució de la cuina valenciana.</p>
+        </div>
+        <div class="gallery" data-gallery-container>
+          <figure class="gallery__item">
+            <img src="./assets/images/paella-valenciana.webp" alt="Paella valenciana tradicional" />
+            <figcaption class="gallery__caption">Paella valenciana</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/arros-al-forn.webp" alt="Cassola d'arròs al forn amb cigrons i botifarra" />
+            <figcaption class="gallery__caption">Arròs al forn</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/fideu-mar.webp" alt="Fideuà marinera amb allioli suau" />
+            <figcaption class="gallery__caption">Fideuà marinera</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/dolcos_valencia.webp" alt="Safata de dolços valencians amb taronja" />
+            <figcaption class="gallery__caption">Dolços de taronja</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/suquet-peix.webp" alt="Suquet de peix amb patata i cloïsses" />
+            <figcaption class="gallery__caption">Suquet de peix</figcaption>
+          </figure>
+        </div>
+      </section>
 
-          <form
+      <div class="forms-stack">
+        <section class="registration" aria-labelledby="inscripcio-title" id="formulari-extra">
+          <div class="registration__panel">
+            <p class="registration__eyebrow">Formulari d'inscripció</p>
+            <h2 class="registration__title" id="inscripcio-title">Reserva la teua plaça</h2>
+            <p class="registration__lead">Indica les teues dades i el torn preferit; rebràs un correu de confirmació amb el programa complet.</p>
+
+            <form
             class="registration__form needs-validation"
             name="inscripcio-jornades"
             method="post"
@@ -41,105 +71,73 @@
               <input class="form-control" type="email" id="registre-email" name="email" placeholder="nom@exemple.com" required />
 
               <label class="form-label" for="registre-telefon">Telèfon de contacte</label>
-              <input class="form-control" type="tel" id="registre-telefon" name="telefon" placeholder="600 000 000" />
+                <input class="form-control" type="tel" id="registre-telefon" name="telefon" placeholder="600 000 000" />
 
-              <label class="form-label" for="registre-modalitat">Modalitat</label>
-              <select class="form-select" id="registre-modalitat" name="modalitat" required>
-                <option value="">Tria una opció</option>
-                <option>Pack complet 3 dies</option>
-                <option>Dissabte + diumenge</option>
-                <option>Tastos vesprada</option>
-              </select>
+                <label class="form-label" for="registre-modalitat">Modalitat</label>
+                <select class="form-select" id="registre-modalitat" name="modalitat" required>
+                  <option value="">Tria una opció</option>
+                  <option>Pack complet 3 dies</option>
+                  <option>Dissabte + diumenge</option>
+                  <option>Tastos vesprada</option>
+                </select>
 
-              <label class="form-label" for="registre-comentaris">Comentaris o al·lèrgies</label>
-              <textarea class="form-control" id="registre-comentaris" name="comentaris" rows="3" placeholder="Escriu qualsevol detall rellevant"></textarea>
+                <label class="form-label" for="registre-comentaris">Comentaris o al·lèrgies</label>
+                <textarea class="form-control" id="registre-comentaris" name="comentaris" rows="3" placeholder="Escriu qualsevol detall rellevant"></textarea>
 
-              <div class="form-check registration__accept">
-                <input class="form-check-input" type="checkbox" id="registre-politica" name="politica" required />
-                <label class="form-check-label" for="registre-politica">Accepto la política de dades de les jornades</label>
-              </div>
+                <div class="form-check registration__accept">
+                  <input class="form-check-input" type="checkbox" id="registre-politica" name="politica" required />
+                  <label class="form-check-label" for="registre-politica">Accepto la política de dades de les jornades</label>
+                </div>
+                <button class="btn btn-primary registration__submit" type="submit">Confirmar inscripció</button>
+              </form>
             </div>
-            <button class="btn btn-primary registration__submit" type="submit">Confirmar inscripció</button>
-          </form>
-        </div>
-      </section>
+          </section>
 
-      <div class="extra-panels">
+     
         <section class="contact-card" aria-labelledby="form-title">
           <div class="contact-card__header">
             <h2 class="contact-card__title" id="form-title">Contacte</h2>
             <p class="contact-card__subtitle">Per a inscripcions, informació general o propostes de tallers.</p>
-            
           </div>
           <form
           class="contact-card__form needs-validation"
-          name="contacte-jornades"
-          method="post"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
-          <input type="hidden" name="form-name" value="contacte-jornades" />
-          <p class="visually-hidden">
-            <label>Si ets humà, deixa aquest camp buit <input name="bot-field" /></label>
-          </p>
-          <div class="mb-3">
-            <label class="form-label" for="full-name">Nom complet</label>
-            <input class="form-control" type="text" id="full-name" name="nom" placeholder="Nom i cognoms" required />
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="email">Correu electrònic</label>
-            <input class="form-control" type="email" id="email" name="email" placeholder="nom@exemple.com" required />
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="tipus">Tipus de consulta</label>
-            <select class="form-select" id="tipus" name="tipus" required>
-              <option value="">Selecciona una opció</option>
-              <option>Inscripció</option>
-              <option>Informació general</option>
-              <option>Proposta de taller</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="missatge">Missatge</label>
-            <textarea class="form-control" id="missatge" name="missatge" rows="4" placeholder="Escriu el teu missatge"></textarea>
-          </div>
-          <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" id="politiques" name="politiques" required />
-            <label class="form-check-label" for="politiques">Accepto la política de dades de les jornades</label>
-          </div>
-          <button class="btn btn-primary contact-card__submit" type="submit">Enviar missatge</button>
-          <p class="contact-card__helper">* Formulari preparat per a Netlify Forms.</p>
-        </form>
-      </section>
-
-      <section class="gallery-card" aria-labelledby="gallery-title">
-        <div class="gallery-card__header">
-          <h2 class="gallery-card__title" id="gallery-title">Galeria de tastos</h2>
-          <p class="gallery-card__subtitle">Plats que representen les arrels i l'evolució de la cuina valenciana.</p>
-
-          </div>
-          <div class="gallery" data-gallery-container>
-            <figure class="gallery__item">
-              <img src="./assets/images/paella-valenciana.webp" alt="Paella valenciana tradicional" />
-              <figcaption class="gallery__caption">Paella valenciana</figcaption>
-            </figure>
-            <figure class="gallery__item">
-              <img src="./assets/images/arros-al-forn.webp" alt="Cassola d'arròs al forn amb cigrons i botifarra" />
-              <figcaption class="gallery__caption">Arròs al forn</figcaption>
-            </figure>
-            <figure class="gallery__item">
-              <img src="./assets/images/fideu-mar.webp" alt="Fideuà marinera amb allioli suau" />
-              <figcaption class="gallery__caption">Fideuà marinera</figcaption>
-            </figure>
-            <figure class="gallery__item">
-              <img src="./assets/images/dolcos_valencia.webp" alt="Safata de dolços valencians amb taronja" />
-              <figcaption class="gallery__caption">Dolços de taronja</figcaption>
-            </figure>
-            <figure class="gallery__item">
-              <img src="./assets/images/suquet-peix.webp" alt="Suquet de peix amb patata i cloïsses" />
-              <figcaption class="gallery__caption">Suquet de peix</figcaption>
-            </figure>
-          </div>
+            name="contacte-jornades"
+            method="post"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contacte-jornades" />
+            <p class="visually-hidden">
+              <label>Si ets humà, deixa aquest camp buit <input name="bot-field" /></label>
+            </p>
+            <div class="mb-3">
+              <label class="form-label" for="full-name">Nom complet</label>
+              <input class="form-control" type="text" id="full-name" name="nom" placeholder="Nom i cognoms" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="email">Correu electrònic</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="nom@exemple.com" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="tipus">Tipus de consulta</label>
+              <select class="form-select" id="tipus" name="tipus" required>
+                <option value="">Selecciona una opció</option>
+                <option>Inscripció</option>
+                <option>Informació general</option>
+                <option>Proposta de taller</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="missatge">Missatge</label>
+              <textarea class="form-control" id="missatge" name="missatge" rows="4" placeholder="Escriu el teu missatge"></textarea>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="politiques" name="politiques" required />
+              <label class="form-check-label" for="politiques">Accepto la política de dades de les jornades</label>
+            </div>
+            <button class="btn btn-primary contact-card__submit" type="submit">Enviar missatge</button>
+            <p class="contact-card__helper">* Formulari preparat per a Netlify Forms.</p>
+          </form>
         </section>
       </div>
     </main>
