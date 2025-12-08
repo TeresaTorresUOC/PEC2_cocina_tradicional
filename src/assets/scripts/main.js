@@ -2,6 +2,9 @@
  * Import dependencies from node_modules
  * see commented examples below
  */
+
+import "../styles/main.scss";
+
 const body = document.body;
 const navContainer = document.querySelector('[data-nav-container]');
 const nav = navContainer?.querySelector('.site-nav');

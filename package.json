@@ -4,8 +4,8 @@
   "private": true,
   "description": "Boilerplate for Advanced HTML/CSS Tools UOC students",
   "scripts": {
-    "parcel:serve": "parcel -p 8123 src/*.html --target web",
-    "parcel:build": "parcel build src/*.html --target web --no-source-maps --no-cache",
+    "parcel:serve": "parcel -p 8123 src/index.html --target web",
+    "parcel:build": "parcel build src/index.html --dist-dir dist --public-url ./",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
     "build": "npm-run-all clean parcel:build",
@@ -18,11 +18,13 @@
       "context": "browser",
       "publicUrl": "./",
       "source": "src/index.html",
+      "distDir": "dist",
       "engines": {
         "browsers": "last 2 versions, > 0.5%, not dead"
       }
     }
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/uoc-advanced-html-css/uoc-boilerplate.git"
